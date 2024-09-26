@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This is the Cryptomatrix project. It is a project to learn about blockchain and cryptocurrencies.
         </p>
         <a
           className="App-link"
