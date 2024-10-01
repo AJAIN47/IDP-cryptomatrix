@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Header.css';
 import logo from '../assets/logo.png'; // Adjust path as needed
 
 function Header() {
@@ -10,45 +9,79 @@ function Header() {
   };
 
   return (
-    <header className="header">
-      <div className="header-top">
-        <div className="header-left">
-          <img src={logo} alt="CryptoMatrix Logo" className="logo" />
-          <span className="brand">CryptoMatrix</span>
+    <header>
+      {/* First line with logo, language select, and login button */}
+      <nav className="navbar navbar-light bg-white shadow-sm">
+        <div className="container-fluid d-flex justify-content-between align-items-center">
+          <a className="navbar-brand d-flex align-items-center" href="/">
+            <img src={logo} alt="CryptoMatrix Logo" height="40" className="d-inline-block align-text-top" />
+            <span className="ms-2">CryptoMatrix</span>
+          </a>
+          <div className="d-flex align-items-center">
+            <select className="form-select me-3" aria-label="Language select" style={{ maxWidth: '100px' }}>
+              <option value="en">English</option>
+              <option value="fr">French</option>
+            </select>
+            <button className="btn btn-primary px-4" style={{ fontSize: '1rem', borderRadius: '8px' }}>Log In</button>
+          </div>
         </div>
+      </nav>
 
-        <div className="header-right">
-          <select className="language-select">
-            <option value="en">English</option>
-            <option value="fr">French</option>
-          </select>
-          <button className="login-btn">Log In</button>
+      {/* Second line (Blue Ribbon) */}
+      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#0073ff' }}>
+        <div className="container-fluid d-flex justify-content-between">
+          {/* Toggle Button for mobile */}
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={toggleMenu}
+            aria-expanded={menuOpen ? 'true' : 'false'}
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          {/* Navigation Links for full-screen */}
+          <div className="navbar-nav me-auto d-none d-lg-flex">
+            <a className="nav-link text-white" href="/">Home</a>
+            <a className="nav-link text-white" href="/portfolio">Portfolio</a>
+            <a className="nav-link text-white" href="/learn">Learn</a>
+            <a className="nav-link text-white" href="/exchange">Exchange</a>
+            <a className="nav-link text-white" href="/chart">Chart</a>
+          </div>
+
+          {/* Search bar on the right (always visible) */}
+          <div className="search-bar-container d-flex ms-auto">
+            <input
+              className="form-control rounded me-2"
+              type="search"
+              placeholder="Coin, Assets, Wallets"
+              aria-label="Search"
+            />
+            <button className="btn btn-light rounded" type="submit">
+              🔍
+            </button>
+          </div>
+
+          {/* Dropdown Menu for Mobile */}
+          <div
+            className={`dropdown-menu ${menuOpen ? 'show' : ''} d-lg-none`}
+            style={{
+              backgroundColor: '#0073ff',
+              left: '0',
+              top: '50px',
+              position: 'absolute',
+              zIndex: '999',
+            }}
+          >
+            <a className="dropdown-item text-white" href="/">Home</a>
+            <a className="dropdown-item text-white" href="/portfolio">Portfolio</a>
+            <a className="dropdown-item text-white" href="/learn">Learn</a>
+            <a className="dropdown-item text-white" href="/exchange">Exchange</a>
+            <a className="dropdown-item text-white" href="/chart">Chart</a>
+          </div>
         </div>
-      </div>
-
-      <div className="header-bottom">
-        {/* Show menu toggle button only on mobile */}
-        <button className="menu-toggle" onClick={toggleMenu}>
-          ☰
-        </button>
-
-        {/* Full menu for larger screens */}
-        <nav className={`nav ${menuOpen ? 'active' : ''}`}>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/learn">Learn</a></li>
-            <li><a href="/exchange">Exchange</a></li>
-            <li><a href="/chart">Chart</a></li>
-          </ul>
-        </nav>
-
-        {/* Search bar on the right */}
-        <div className="search-container">
-          <input type="text" placeholder="Coin, Assets, Wallets" className="search-input" />
-          <button className="search-btn">🔍</button>
-        </div>
-      </div>
+      </nav>
     </header>
   );
 }
