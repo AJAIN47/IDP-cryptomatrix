@@ -1,0 +1,206 @@
+/* General Header Styles */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .language-select {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  .login-btn {
+    background-color: #0073ff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056cc;
+  }
+  
+  /* Blue bar with menu toggle on left and search bar on right */
+  .header-bottom {
+    background-color: #0073ff;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Hide the toggle button on large screens */
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Navigation Styles (visible inline for large screens) */
+  .nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav ul li {
+    margin-right: 20px;
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .nav ul li a:hover {
+    color: #e0e0e0;
+  }
+  
+  /* Search Container Styles */
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 32px;
+    width: 250px;
+    border: 1px solid #0073ff;
+  }
+  
+  .search-input {
+    border: none;
+    padding: 6px 10px;
+    width: 100%;
+    outline: none;
+    font-size: 12px;
+  }
+  
+  .search-btn {
+    background-color: #0073ff;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    height: 100%;
+  }
+  
+  .search-btn:hover {
+    background-color: #0056cc;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .header-top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+  
+    .header-right {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      display: flex;
+      align-items: center;
+    }
+  
+    .header-bottom {
+      padding: 10px 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    /* Show the menu toggle button on mobile */
+    .menu-toggle {
+      display: block;
+      margin-right: 20px;
+    }
+  
+    /* Hide the navigation on mobile by default */
+    .nav ul {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+  
+    /* Show the menu when the toggle button is clicked */
+    .nav.active ul {
+      display: flex;
+    }
+  
+    /* Search bar on mobile */
+    .search-container {
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .header-top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .header-bottom {
+      padding: 10px 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .search-container {
+      width: 100%;
+      margin-right: 10px;
+    }
+  }
+  
