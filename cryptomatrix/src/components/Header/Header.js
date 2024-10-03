@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/logo.png'; // Adjust path as needed
+import logo from '../../assets/logo.png';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
