@@ -1,0 +1,71 @@
+/* General navbar styling */
+.navbar {
+    background-color: #0073ff;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    margin-right: 15px;
+    color: white;
+}
+
+.search-bar-container {
+    margin-left: auto;
+}
+
+.search-bar-container .form-control {
+    max-width: 250px;
+    height: 40px;
+}
+
+.search-bar-container .btn {
+    height: 40px;
+}
+
+/* Mobile View Specific Adjustments */
+@media (max-width: 992px) {
+    .navbar-toggler {
+        display: block;
+        border: none;
+        background-color: transparent;
+    }
+
+    /* Correcting dropdown placement under toggle button */
+    .dropdown-menu {
+        position: absolute;
+        top: 60px; /* Position the dropdown below the toggle button */
+        left: 0px; /* Ensure dropdown aligns properly with the toggle */
+        z-index: 1000;
+        display: none;
+        width: 200px;
+        background-color: #0073ff;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none;
+    }
+
+    .search-bar-container {
+        margin-left: auto;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 993px) {
+    .navbar-nav {
+        display: flex !important;
+    }
+
+    .dropdown-menu {
+        display: none;
+    }
+}
