@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.png';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation(); 
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language); 
   };
 
   return (
@@ -15,14 +21,16 @@ function Header() {
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <a className="navbar-brand d-flex align-items-center" href="/">
             <img src={logo} alt="CryptoMatrix Logo" height="40" className="d-inline-block align-text-top" />
-            <span className="ms-2">CryptoMatrix</span>
+            <span className="ms-2">{t('CryptoMatrix')}</span>
           </a>
           <div className="d-flex align-items-center">
-            <select className="form-select me-3" aria-label="Language select" style={{ maxWidth: '100px' }}>
+            <select className="form-select me-3" onChange={(e) => changeLanguage(e.target.value)} aria-label="Language select" style={{ maxWidth: '100px' }}>
               <option value="en">English</option>
               <option value="fr">French</option>
+              <option value="hi">Hindi</option>
+              <option value="vi">Vietnamese</option>
             </select>
-            <button className="btn btn-primary px-4" style={{ fontSize: '1rem', borderRadius: '8px' }}>Log In</button>
+            <button className="btn btn-primary px-4" style={{ fontSize: '1rem', borderRadius: '8px' }}>{t('Login')}</button>
           </div>
         </div>
       </nav>
@@ -43,11 +51,11 @@ function Header() {
 
           {/* Navigation Links for full-screen */}
           <div className="navbar-nav me-auto d-none d-lg-flex">
-            <a className="nav-link text-white" href="/">Home</a>
-            <a className="nav-link text-white" href="/portfolio">Portfolio</a>
-            <a className="nav-link text-white" href="/learn">Learn</a>
-            <a className="nav-link text-white" href="/exchange">Exchange</a>
-            <a className="nav-link text-white" href="/chart">Chart</a>
+            <a className="nav-link text-white" href="/">{t('Home')}</a>
+            <a className="nav-link text-white" href="/portfolio">{t('Portfolio')}</a>
+            <a className="nav-link text-white" href="/learn">{t('Learn')}</a>
+            <a className="nav-link text-white" href="/exchange">{t('Exchange')}</a>
+            <a className="nav-link text-white" href="/chart">{t('Chart')}</a>
           </div>
 
           {/* Search bar on the right (always visible) */}
@@ -55,7 +63,7 @@ function Header() {
             <input
               className="form-control rounded me-2"
               type="search"
-              placeholder="Coin, Assets, Wallets"
+              placeholder={t('SearchPlaceholder')}
               aria-label="Search"
             />
             <button className="btn btn-light rounded" type="submit">
@@ -74,11 +82,11 @@ function Header() {
               zIndex: '999',
             }}
           >
-            <a className="dropdown-item text-white" href="/">Home</a>
-            <a className="dropdown-item text-white" href="/portfolio">Portfolio</a>
-            <a className="dropdown-item text-white" href="/learn">Learn</a>
-            <a className="dropdown-item text-white" href="/exchange">Exchange</a>
-            <a className="dropdown-item text-white" href="/chart">Chart</a>
+            <a className="dropdown-item text-white" href="/">{t('Home')}</a>
+            <a className="dropdown-item text-white" href="/portfolio">{t('Portfolio')}</a>
+            <a className="dropdown-item text-white" href="/learn">{t('Learn')}</a>
+            <a className="dropdown-item text-white" href="/exchange">{t('Exchange')}</a>
+            <a className="dropdown-item text-white" href="/chart">{t('Chart')}</a>
           </div>
         </div>
       </nav>
