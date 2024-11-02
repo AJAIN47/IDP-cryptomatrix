@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../../assets/logo.png';
+import './Header.css';
+import Login from '../../components/logIn/login';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,25 +9,36 @@ function Header() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  
+ const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+ const openPopup =() => setIsPopupOpen(true);
+ const closePopup =() => setIsPopupOpen(false);
 
   return (
-    <header>
+    <header className='header'>
       {/* First line with logo, language select, and login button */}
-      <nav className="navbar navbar-light bg-white shadow-sm">
+      <div className="navbar navbar-light bg-white shadow-sm">
         <div className="container-fluid d-flex justify-content-between align-items-center">
-          <a className="navbar-brand d-flex align-items-center" href="/">
-            <img src={logo} alt="CryptoMatrix Logo" height="40" className="d-inline-block align-text-top" />
-            <span className="ms-2">CryptoMatrix</span>
+          <a className="Logo" href="/">
+            <img src={logo} alt="CryptoMatrix Logo" height="40" className='logo-img'/>
+            <span className="logo-name">CryptoMatrix</span>
           </a>
           <div className="d-flex align-items-center">
             <select className="form-select me-3" aria-label="Language select" style={{ maxWidth: '100px' }}>
               <option value="en">English</option>
               <option value="fr">French</option>
             </select>
-            <button className="btn btn-primary px-4" style={{ fontSize: '1rem', borderRadius: '8px' }}>Log In</button>
+          <button 
+            className="login-button"  
+            onClick={openPopup}
+          >
+            Log In
+          </button>
+          <Login isOpen={isPopupOpen} onClose={closePopup} />
           </div>
         </div>
-      </nav>
+      </div>
 
       {/* Second line (Blue Ribbon) */}
       <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#0073ff' }}>

@@ -22,6 +22,24 @@
     height: 40px;
 }
 
+.header {
+    background-color: white;
+}
+
+.logo{
+    align-self: left;
+}
+
+.lo
+
+.login-button {
+    background-color: #3861FB;
+    color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
 /* Mobile View Specific Adjustments */
 @media (max-width: 992px) {
     .navbar-toggler {
