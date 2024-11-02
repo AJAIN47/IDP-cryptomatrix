@@ -1,42 +1,49 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.png';
 import './Header.css';
 import Login from '../../components/logIn/login';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation(); 
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  
- const [isPopupOpen, setIsPopupOpen] = useState(false);
+//language change function
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language); 
+  };
 
- const openPopup =() => setIsPopupOpen(true);
- const closePopup =() => setIsPopupOpen(false);
+  //popup open and close
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  const openPopup =() => setIsPopupOpen(true);
+  const closePopup =() => setIsPopupOpen(false);
   return (
     <header className='header'>
       {/* First line with logo, language select, and login button */}
       <div className="navbar navbar-light bg-white shadow-sm">
         <div className="container-fluid d-flex justify-content-between align-items-center">
-          <a className="Logo" href="/">
-            <img src={logo} alt="CryptoMatrix Logo" height="40" className='logo-img'/>
-            <span className="logo-name">CryptoMatrix</span>
+        <a className="navbar-brand d-flex align-items-center" href="/">
+            <img src={logo} alt="CryptoMatrix Logo" height="40" className="d-inline-block align-text-top" />
+            <span className="ms-2">{t('CryptoMatrix')}</span>
           </a>
           <div className="d-flex align-items-center">
-            <select className="form-select me-3" aria-label="Language select" style={{ maxWidth: '100px' }}>
+            <select className="form-select me-3" onChange={(e) => changeLanguage(e.target.value)} aria-label="Language select" style={{ maxWidth: '100px' }}>
               <option value="en">English</option>
               <option value="fr">French</option>
+              <option value="hi">Hindi</option>
+              <option value="vi">Vietnamese</option>
             </select>
-          <button 
+            <button 
             className="login-button"  
             onClick={openPopup}
           >
             Log In
           </button>
-          <Login isOpen={isPopupOpen} onClose={closePopup} />
-          </div>
+          <Login isOpen={isPopupOpen} onClose={closePopup} />          </div>
         </div>
       </div>
 
@@ -56,11 +63,11 @@ function Header() {
 
           {/* Navigation Links for full-screen */}
           <div className="navbar-nav me-auto d-none d-lg-flex">
-            <a className="nav-link text-white" href="/">Home</a>
-            <a className="nav-link text-white" href="/portfolio">Portfolio</a>
-            <a className="nav-link text-white" href="/learn">Learn</a>
-            <a className="nav-link text-white" href="/exchange">Exchange</a>
-            <a className="nav-link text-white" href="/chart">Chart</a>
+            <a className="nav-link text-white" href="/">{t('Home')}</a>
+            <a className="nav-link text-white" href="/portfolio">{t('Portfolio')}</a>
+            <a className="nav-link text-white" href="/learn">{t('Learn')}</a>
+            <a className="nav-link text-white" href="/exchange">{t('Exchange')}</a>
+            <a className="nav-link text-white" href="/chart">{t('Chart')}</a>
           </div>
 
           {/* Search bar on the right (always visible) */}
@@ -68,7 +75,7 @@ function Header() {
             <input
               className="form-control rounded me-2"
               type="search"
-              placeholder="Coin, Assets, Wallets"
+              placeholder={t('SearchPlaceholder')}
               aria-label="Search"
             />
             <button className="btn btn-light rounded" type="submit">
@@ -87,11 +94,11 @@ function Header() {
               zIndex: '999',
             }}
           >
-            <a className="dropdown-item text-white" href="/">Home</a>
-            <a className="dropdown-item text-white" href="/portfolio">Portfolio</a>
-            <a className="dropdown-item text-white" href="/learn">Learn</a>
-            <a className="dropdown-item text-white" href="/exchange">Exchange</a>
-            <a className="dropdown-item text-white" href="/chart">Chart</a>
+            <a className="dropdown-item text-white" href="/">{t('Home')}</a>
+            <a className="dropdown-item text-white" href="/portfolio">{t('Portfolio')}</a>
+            <a className="dropdown-item text-white" href="/learn">{t('Learn')}</a>
+            <a className="dropdown-item text-white" href="/exchange">{t('Exchange')}</a>
+            <a className="dropdown-item text-white" href="/chart">{t('Chart')}</a>
           </div>
         </div>
       </nav>
