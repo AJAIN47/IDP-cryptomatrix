@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Carousel.css';
+import { useTranslation } from 'react-i18next';
 
 const Carousel = () => {
   const [cryptocurrencyData, setCryptocurrencyData] = useState([]);
-
+  const { t } = useTranslation(); 
   // Function to generate random color
   const generateRandomColor = () => {
     const letters = '0123456789ABCDEF';
@@ -30,7 +31,7 @@ const Carousel = () => {
 
   return (
     <div className="carousel-container">
-      <h2>Your Cryptocurrency Portfolio</h2>
+      <h2>{t('BuildYourPortfolio')}</h2>
       <div className="horizontal-floating-tokens">
         {cryptocurrencyData.map((token, index) => (
           <div

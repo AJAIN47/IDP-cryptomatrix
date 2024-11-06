@@ -1,17 +1,20 @@
 import React from 'react';
 import './Landing.css'; // Optional: Separate CSS file for styling
+import { useTranslation } from 'react-i18next';
 
 function Landing () {
+  const { t } = useTranslation(); 
+
   return (
     <div className="landing-container">
       <div className="landing-card">
-        <h2>Take control of your financial destiny today!</h2>
+        <h2>{t('Control')}</h2>
         <p>
-        Millions of crypto investors have trust on us, the best crypto platform.*
+        {t('Millions')}
         </p>
       </div>
       <div className="crypto-card">
-        <h3>Uncover the potential of our features to elevate your crypto trading</h3>
+        <h3>{t('Uncover')}</h3>
         
         <div className="video-link-wrapper">
           <a 
