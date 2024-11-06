@@ -1,36 +1,49 @@
-.crypto-table th,
-.crypto-table td {
-    padding: 10px;
+/* Container for the Grid View */
+.crypto-grid-container {
+    padding: 20px;
+  }
+  
+  .crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .crypto-tile {
     border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
     text-align: center;
-}
-
-.crypto-table th:nth-child(1),
-.crypto-table td:nth-child(1) {
-    width: 60px;
-}
-
-.crypto-table th:nth-child(2),
-.crypto-table td:nth-child(2) {
-    width: 200px;
-    text-align: left;
-}
-
-.crypto-table th:nth-child(3),
-.crypto-table td:nth-child(3) {
-    width: 120px;
-    text-align: right;
-}
-
-.crypto-table th:nth-child(4),
-.crypto-table td:nth-child(4),
-.crypto-table th:nth-child(5),
-.crypto-table td:nth-child(5) {
-    width: 150px;
-    text-align: right;
-}
-
-.crypto-table th:nth-child(6),
-.crypto-table td:nth-child(6) {
-    width: 100px;
-}
+    background-color: #fff;
+    transition: transform 0.3s;
+  }
+  
+  .crypto-tile:hover {
+    transform: translateY(-10px);
+  }
+  
+  .crypto-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .crypto-info {
+    padding: 10px;
+  }
+  
+  .crypto-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .crypto-price {
+    font-size: 14px;
+    color: #28a745;
+    margin-top: 5px;
+  }
+  

@@ -3,10 +3,10 @@ import './i18n';
 import './App.css';
 import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
-import CryptoGrid from './components/CryptoGrid/CryptoGrid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Carousel from './components/Carousel/Carousel';
+import CryptoViewToggle from './components/CryptoViewToggle/CryptoViewToggle';
 
 
 function App() {
@@ -15,7 +15,8 @@ function App() {
       <Header />
       <Landing />
       <Carousel />
-      <CryptoGrid />
+      {/* <CryptoTable /> */}
+      <CryptoViewToggle />
     </div>
   );
 }

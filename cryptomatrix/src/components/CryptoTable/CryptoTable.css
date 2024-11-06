@@ -1,0 +1,36 @@
+.crypto-table th,
+.crypto-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.crypto-table th:nth-child(1),
+.crypto-table td:nth-child(1) {
+    width: 60px;
+}
+
+.crypto-table th:nth-child(2),
+.crypto-table td:nth-child(2) {
+    width: 200px;
+    text-align: left;
+}
+
+.crypto-table th:nth-child(3),
+.crypto-table td:nth-child(3) {
+    width: 120px;
+    text-align: right;
+}
+
+.crypto-table th:nth-child(4),
+.crypto-table td:nth-child(4),
+.crypto-table th:nth-child(5),
+.crypto-table td:nth-child(5) {
+    width: 150px;
+    text-align: right;
+}
+
+.crypto-table th:nth-child(6),
+.crypto-table td:nth-child(6) {
+    width: 100px;
+}

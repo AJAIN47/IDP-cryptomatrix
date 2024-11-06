@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
+import './CryptoGrid.css'; // Assuming the CSS is defined in a separate file
 
-// Register the necessary components
-ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend);
-
-const CryptoTable = () => {
+const CryptoGrid = () => {
   const [cryptos, setCryptos] = useState([]);
 
   useEffect(() => {
@@ -22,114 +18,26 @@ const CryptoTable = () => {
     fetchCryptoData();
   }, []);
 
-  // Function to generate zig-zag pattern from the data
-  const generateZigZagData = (data) => {
-    let zigzagData = [];
-    let direction = 1;  // 1 for increasing, -1 for decreasing
-
-    // Generate zig-zag pattern by alternating the direction
-    for (let i = 0; i < data.length; i++) {
-      zigzagData.push(data[i] * direction);
-      direction *= -1;  // Flip the direction after each step
-    }
-    return zigzagData;
-  };
-
-  // Define custom column widths for specific columns
-  const columnStyles = {
-    symbol: {
-      width: '60px',
-      textAlign: 'center',
-    },
-    name: {
-      width: '60px',
-      textAlign: 'center',
-    },
-    price: {
-      width: '60px',
-      textAlign: 'center',
-    },
-    market: {
-      width: '60px',
-      textAlign: 'center',
-    },
-    supply: {
-      width: '60px',
-      textAlign: 'center',
-    },
-    trend: {
-      width: '100px',
-      textAlign: 'center',
-    },
-  };
-
   return (
-    <div className="crypto-table-container">
-      <h2>Cryptocurrency Market</h2>
-      <table className="crypto-table" style={{ width: '100%', tableLayout: 'fixed' }}>
-
-        <thead>
-          <tr>
-            <th style={columnStyles.symbol}>Symbol</th>
-            <th style={columnStyles.name}>Name</th>
-            <th style={columnStyles.price}>Price</th>
-            <th style={columnStyles.market}>Market Cap</th>
-            <th style={columnStyles.supply}>Supply</th>
-            <th style={columnStyles.trend}>Trend</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cryptos.map((crypto) => (
-            <tr key={crypto.id}>
-              <td style={columnStyles.symbol}>
-                <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${crypto.id}.png`} alt={crypto.name} style={{ width: '30px', height: '30px' }} />
-              </td>
-              <td style={columnStyles.name}>{crypto.name}</td>
-              <td style={columnStyles.price}>${crypto.quote.USD.price.toFixed(2).toLocaleString()}</td>
-              <td style={columnStyles.market}>${crypto.quote.USD.market_cap.toLocaleString()}</td>
-              <td style={columnStyles.supply}>{crypto.circulating_supply.toLocaleString()}</td>
-              <td style={columnStyles.trend}>
-                <Line
-                  data={{
-                    labels: ["1h", "24h", "7d", "30d", "60d", "90d"], // Define time periods as labels
-                    datasets: [{
-                      label: 'Price Trend',
-                      data: generateZigZagData([
-                        crypto.quote.USD.percent_change_1h,
-                        crypto.quote.USD.percent_change_24h,
-                        crypto.quote.USD.percent_change_7d,
-                        crypto.quote.USD.percent_change_30d,
-                        crypto.quote.USD.percent_change_60d,
-                        crypto.quote.USD.percent_change_90d,
-                      ]), // Use the generated zig-zag data
-                      borderColor: "rgba(255, 99, 132, 1)", // Color for the zig-zag line
-                      backgroundColor: "rgba(255, 99, 132, 0.2)",
-                      fill: true,  // Fill the area under the line
-                      borderWidth: 2,
-                      pointRadius: 3,
-                    }],
-                  }}
-                  options={{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                      x: { display: true },
-                      y: { display: true },
-                    },
-                    plugins: {
-                      legend: { display: false }
-                    }
-                  }}
-                  height={90}
-                  width={100}
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="crypto-grid-container">
+      <h2>Cryptocurrency Market - Grid View</h2>
+      <div className="crypto-grid">
+        {cryptos.map((crypto) => (
+          <div key={crypto.id} className="crypto-tile">
+            <img
+              src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${crypto.id}.png`}
+              alt={crypto.name}
+              className="crypto-logo"
+            />
+            <div className="crypto-info">
+              <h3 className="crypto-name">{crypto.name}</h3>
+              <p className="crypto-price">${crypto.quote.USD.price.toFixed(2).toLocaleString()}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default CryptoTable;
+export default CryptoGrid;
