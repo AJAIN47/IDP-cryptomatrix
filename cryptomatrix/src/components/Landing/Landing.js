@@ -1,6 +1,5 @@
 import React from 'react';
 import './Landing.css'; // Optional: Separate CSS file for styling
-import bitcoinImage from '../../assets/bitcoin.png'; // Optional: Image file for styling
 
 function Landing () {
   return (

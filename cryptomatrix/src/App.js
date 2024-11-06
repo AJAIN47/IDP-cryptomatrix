@@ -3,8 +3,10 @@ import './i18n';
 import './App.css';
 import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
+import CryptoGrid from './components/CryptoGrid/CryptoGrid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Carousel from './components/Carousel/Carousel';
 
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
     <div className="App">
       <Header />
       <Landing />
+      <Carousel />
+      <CryptoGrid />
     </div>
   );
 }
