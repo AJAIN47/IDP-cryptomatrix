@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
+import './CryptoTable.css';
 
 // Register the necessary components
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend);
 
 const CryptoTable = () => {
   const [cryptos, setCryptos] = useState([]);
+  const [filter, setFilter] = useState("All"); // State to manage dropdown filter
+
 
   useEffect(() => {
     const fetchCryptoData = async () => {
@@ -63,11 +66,26 @@ const CryptoTable = () => {
     },
   };
 
+
+ // Apply filter to display only the required number of items
+ const filteredCryptos = filter === "All" ? cryptos 
+ : filter === "Top 10" ? cryptos.slice(0, 10) 
+ : cryptos.slice(0, 20);
+
   return (
     <div className="crypto-table-container">
       <h2>Cryptocurrency Market</h2>
-      <table className="crypto-table" style={{ width: '100%', tableLayout: 'fixed' }}>
 
+      <div className="dropdown-container">
+  <label>Show: </label>
+  <select className="dropdown" onChange={(e) => setFilter(e.target.value)} value={filter}>
+    <option value="All">All</option>
+    <option value="Top 10">Trending Top 10</option>
+    <option value="Top 20">Trending Top 20</option>
+  </select>
+</div>
+
+      <table className="crypto-table" style={{ width: '100%', tableLayout: 'fixed' }}>
         <thead>
           <tr>
             <th style={columnStyles.symbol}>Symbol</th>
@@ -79,7 +97,7 @@ const CryptoTable = () => {
           </tr>
         </thead>
         <tbody>
-          {cryptos.map((crypto) => (
+          {filteredCryptos.map((crypto) => (
             <tr key={crypto.id}>
               <td style={columnStyles.symbol}>
                 <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${crypto.id}.png`} alt={crypto.name} style={{ width: '30px', height: '30px' }} />
