@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link
 import './CryptoGrid.css';
 
 const CryptoGrid = () => {
@@ -38,7 +39,7 @@ const CryptoGrid = () => {
       <h2>Cryptocurrency Market - Grid View</h2>
       <div className="crypto-grid">
         {getFilteredCryptos().map((crypto) => (
-          <div key={crypto.id} className="crypto-tile">
+          <Link key={crypto.id} to={`/coin/${crypto.id}`} className="crypto-tile">  {/* Use Link to navigate to CoinPage */}
             <img
               src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${crypto.id}.png`}
               alt={crypto.name}
@@ -48,7 +49,7 @@ const CryptoGrid = () => {
               <h3 className="crypto-name">{crypto.name}</h3>
               <p className="crypto-price">${crypto.quote.USD.price.toFixed(2).toLocaleString()}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
