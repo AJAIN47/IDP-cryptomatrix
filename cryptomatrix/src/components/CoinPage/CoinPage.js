@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './CoinPage.css';
+import CandlestickChart from '../CandlestickChart/CandlestickChart';
 
 const CoinPage = () => {
   const { id } = useParams();  
@@ -45,6 +46,8 @@ const CoinPage = () => {
       </div>
 
       <div className="tags-title">Tags:</div>
+      {/* Render the CandlestickChart below the coin data */}
+      <CandlestickChart />
       <ul>
         {tags.map(tag => (
           <li key={tag}>{tag}</li>
@@ -55,3 +58,4 @@ const CoinPage = () => {
 };
 
 export default CoinPage;
+
