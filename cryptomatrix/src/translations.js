@@ -5,10 +5,25 @@ const translations = {
       "Login": "Log In",
       "Home": "Home",
       "Portfolio": "Portfolio",
+      "PORTFOLIO": "PORTFOLIO",
       "Learn": "Learn",
       "Exchange": "Exchange",
       "Chart": "Chart",
-      "SearchPlaceholder": "Search by Coin, Assets, Wallets"
+      "SearchPlaceholder": "Search by Coin, Assets, Wallets",
+      "CryptoCurrency101": "CRYPTOCURRENCY 101: YOUR ULTIMATE BEGINNER’S GUIDE",
+      "CommentSection": "COMMENT SECTION",
+      "VideoTitle": "Cryptocurrency Explained",
+      "WriteComment": "Log in to add a comment.",
+      "PostComment": "Post Comment",
+      "SampleComment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Amount" : "Amount",
+      "YOUR INVESTMENTS": "YOUR INVESTMENTS",
+      "Last 7 days" : "Last 7 days",
+      "{{percentage}}% of your profile": "{{percentage}}% of your profile",
+      "DEPOSIT": "DEPOSIT",
+      "WITHDRAW": "WITHDRAW",
+      "Deposit Transaction Successful": "Deposit Transaction Successful",
+      "Withdraw Transaction Successful": "Withdraw Transaction Successful"
     }
   },
   fr: {
@@ -17,37 +32,80 @@ const translations = {
       "Login": "Connexion",
       "Home": "Accueil",
       "Portfolio": "Portefeuille",
+      "PORTFOLIO": "PORTEFEUILLE",
       "Learn": "Apprendre",
       "Exchange": "Échange",
       "Chart": "Graphique",
-      "SearchPlaceholder": "Rechercher par pièce, actifs, portefeuilles"
+      "SearchPlaceholder": "Rechercher par pièce, actifs, portefeuilles",
+      "CryptoCurrency101": "CRYPTOMONNAIE 101: VOTRE GUIDE DÉBUTANT ULTIME",
+      "CommentSection": "SECTION COMMENTAIRE",
+      "VideoTitle": "Cryptomonnaie Expliquée",
+      "WriteComment": "Connectez-vous pour ajouter un commentaire.",
+      "PostComment": "Poster un commentaire",
+      "SampleComment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Amount" : "Montant",
+      "YOUR INVESTMENTS": "VOS INVESTISSEMENTS",
+      "Last 7 days" : "7 derniers jours",
+      "{{percentage}}% of your profile": "{{percentage}}% de votre profil",
+      "DEPOSIT": "DÉPÔT",
+      "WITHDRAW": "RETIRER",
+      "Deposit Transaction Successful": "Dépôt réussi",
+      "Withdraw Transaction Successful": "Retrait réussi"
     }
   },
-  // Add more languages here
-  // add hindi translation
+
   hi: {
     translation: {
       "CryptoMatrix": "क्रिप्टोमैट्रिक्स",
       "Login": "लॉग इन करें",
       "Home": "होम",
       "Portfolio": "पोर्टफोलियो",
+      "PORTFOLIO": "पोर्टफोलियो",
       "Learn": "सीखें",
       "Exchange": "विनिमय",
       "Chart": "चार्ट",
-      "SearchPlaceholder": "कॉइन, एसेट, वॉलेट्स द्वारा खोजें"
+      "SearchPlaceholder": "कॉइन, एसेट, वॉलेट्स द्वारा खोजें",
+      "CryptoCurrency101": "क्रिप्टोकरेंसी 101: आपका अंतिम शुरुआती गाइड",
+      "CommentSection": "टिप्पणी खंड",
+      "VideoTitle": "क्रिप्टोकरेंसी की समझ",
+      "WriteComment": "टिप्पणी जोड़ने के लिए लॉग इन करें।",
+      "PostComment": "टिप्पणी करें",
+      "SampleComment": "लोरेम इप्सम डोलर सिट अमेट, कॉन्सेक्टेटुर एडिपिस्किंग एलिट।",
+      "Amount" : "राशि",
+      "YOUR INVESTMENTS": "आपके निवेश",
+      "Last 7 days" : "पिछले 7 दिन",
+      "{{percentage}}% of your profile": "आपके प्रोफाइल का {{percentage}}%",
+      "DEPOSIT": "जमा करें",
+      "WITHDRAW": "निकालें",
+      "Deposit Transaction Successful": "जमा सफल",
+      "Withdraw Transaction Successful": "निकालना सफल"
     }
   },
-  // add Vietnamese translation
   vi: {
     translation: {
       "CryptoMatrix": "CryptoMatrix",
       "Login": "Đăng nhập",
       "Home": "Trang chủ",
       "Portfolio": "Bảng điều khiển",
+      "PORTFOLIO": "BẢNG ĐIỀU KHIỂN",
       "Learn": "Học",
       "Exchange": "Trao đổi",
       "Chart": "Biểu đồ",
-      "SearchPlaceholder": "Tìm kiếm theo Coin, Tài sản, Ví"
+      "SearchPlaceholder": "Tìm kiếm theo Coin, Tài sản, Ví",
+      "CryptoCurrency101": "TIỀN ẢO 101: HƯỚNG DẪN CHO NGƯỜI MỚI BẮT ĐẦU",
+      "CommentSection": "PHẦN BÌNH LUẬN",
+      "VideoTitle": "Giải thích Tiền ảo",
+      "WriteComment": "Đăng nhập để thêm bình luận.",
+      "PostComment": "Đăng bình luận",
+      "SampleComment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Amount" : "Số tiền",
+      "YOUR INVESTMENTS": "ĐẦU TƯ CỦA BẠN",
+      "Last 7 days" : "7 ngày qua",
+      "{{percentage}}% of your profile": "{{percentage}}% của hồ sơ của bạn",
+      "DEPOSIT": "GỬI TIỀN",
+      "WITHDRAW": "RÚT TIỀN",
+      "Deposit Transaction Successful": "Giao dịch gửi tiền thành công",
+      "Withdraw Transaction Successful": "Giao dịch rút tiền thành công"
     }
   },
 };

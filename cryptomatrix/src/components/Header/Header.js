@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
 function Header() {
@@ -48,14 +49,13 @@ function Header() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
-          {/* Navigation Links for full-screen */}
-          <div className="navbar-nav me-auto d-none d-lg-flex">
-            <a className="nav-link text-white" href="/">{t('Home')}</a>
-            <a className="nav-link text-white" href="/portfolio">{t('Portfolio')}</a>
-            <a className="nav-link text-white" href="/learn">{t('Learn')}</a>
-            <a className="nav-link text-white" href="/exchange">{t('Exchange')}</a>
-            <a className="nav-link text-white" href="/chart">{t('Chart')}</a>
+          
+         <div className="navbar-nav me-auto d-none d-lg-flex">
+            <Link className="nav-link text-white" to="/">{t('Home')}</Link>
+            <Link className="nav-link text-white" to="/portfolio">{t('Portfolio')}</Link>
+            <Link className="nav-link text-white" to="/learn">{t('Learn')}</Link>
+            <Link className="nav-link text-white" to="/exchange">{t('Exchange')}</Link>
+            <Link className="nav-link text-white" to="/chart">{t('Chart')}</Link>
           </div>
 
           {/* Search bar on the right (always visible) */}
