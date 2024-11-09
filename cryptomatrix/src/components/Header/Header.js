@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.png';
 import './Header.css';
 import Login from '../../components/logIn/login';
+import ComingSoonPopup from '../ComingSoon/ComingSoon';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +12,8 @@ function Header() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-//language change function
+
+  //language change function
   const changeLanguage = (language) => {
     i18n.changeLanguage(language); 
   };
@@ -21,6 +23,13 @@ function Header() {
 
   const openPopup =() => setIsPopupOpen(true);
   const closePopup =() => setIsPopupOpen(false);
+
+  //coming soon popup open and close
+  const [isComingSoonPopupOpen, setIsComingSoonPopupOpen] = useState(false);
+
+  const openComingSoonPopup = () => setIsComingSoonPopupOpen(true);
+  const closeComingSoonPopup = () => setIsComingSoonPopupOpen(false);
+
   return (
     <header className='header'>
       {/* First line with logo, language select, and login button */}
@@ -43,7 +52,8 @@ function Header() {
           >
             Log In
           </button>
-          <Login isOpen={isPopupOpen} onClose={closePopup} />          </div>
+          <Login isOpen={isPopupOpen} onClose={closePopup} />          
+          </div>
         </div>
       </div>
 
@@ -66,8 +76,8 @@ function Header() {
             <a className="nav-link text-white" href="/">{t('Home')}</a>
             <a className="nav-link text-white" href="/portfolio">{t('Portfolio')}</a>
             <a className="nav-link text-white" href="/learn">{t('Learn')}</a>
-            <a className="nav-link text-white" href="/exchange">{t('Exchange')}</a>
-            <a className="nav-link text-white" href="/chart">{t('Chart')}</a>
+            <a className="nav-link text-white" href="#" onClick={openComingSoonPopup}>{t('Exchange')}</a>
+            <a className="nav-link text-white" href="#" onClick={openComingSoonPopup}>{t('Chart')}</a>
           </div>
 
           {/* Search bar on the right (always visible) */}
@@ -97,11 +107,12 @@ function Header() {
             <a className="dropdown-item text-white" href="/">{t('Home')}</a>
             <a className="dropdown-item text-white" href="/portfolio">{t('Portfolio')}</a>
             <a className="dropdown-item text-white" href="/learn">{t('Learn')}</a>
-            <a className="dropdown-item text-white" href="/exchange">{t('Exchange')}</a>
-            <a className="dropdown-item text-white" href="/chart">{t('Chart')}</a>
+            <a className="dropdown-item text-white" href="#" onClick={openComingSoonPopup}>{t('Exchange')}</a>
+            <a className="dropdown-item text-white" href="#" onClick={openComingSoonPopup}>{t('Chart')}</a>
           </div>
         </div>
       </nav>
+      <ComingSoonPopup isOpen={isComingSoonPopupOpen} onClose={closeComingSoonPopup} />
     </header>
   );
 }
