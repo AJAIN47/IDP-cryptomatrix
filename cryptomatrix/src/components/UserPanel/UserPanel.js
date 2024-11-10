@@ -44,7 +44,7 @@ const UserPanel = ({ isOpen, onClose }) => {
   const panelClass = isOpen ? "user-panel open" : "user-panel";
 
   return (
-    <div className={panelClass}>
+    <div className={panelClass} style={{background:'#0073ff'}}>
       <div className="user-panel-header">
         <button onClick={onClose} className="close-btn">x</button>
         <div className="user-icon">{initials}</div>

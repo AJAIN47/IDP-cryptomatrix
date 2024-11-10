@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Login from '../Login/Login'; // Make sure the path is correct for your Login component import
 import { useAuth } from '../../context/AuthContext'; // Import useAuth from your AuthContext
+import { IoMdPerson } from "react-icons/io";
+import { MdDeleteForever } from "react-icons/md";
 
 function LearnPage() {
   const { t } = useTranslation();
@@ -80,25 +82,28 @@ function LearnPage() {
           <div className="comment-list" style={{ maxHeight: '300px', overflowY: 'auto' }}>
             <div className="card mb-2">
               <div className="card-body d-flex">
-                <div className="comment-icon col-1 text-center">&#128100;</div>
+                <div className="comment-icon col-1 text-center"><IoMdPerson size={25}/></div>
                 <div className="col-10">
-                  <h6 className="card-title asd">{elonMuskComment.name}</h6>
-                  <p className="card-text">{elonMuskComment.text}</p>
+                  <h6 className="card-title" style={{textAlign:'left'}}>{elonMuskComment.name}</h6>
+                  <p className="card-text" style={{textAlign:'left'}}>{elonMuskComment.text}</p>
                 </div>
               </div>
             </div>
             {comments.map(comment => (
               <div key={comment.id} className="card mb-2">
                 <div className="card-body d-flex">
-                  <div className="comment-icon col-1 text-center">&#128100;</div>
+                  <div className="comment-icon col-1 text-center"><IoMdPerson size={25}/></div>
                   <div className="col-10">
-                    <h6 className="card-title asd">{comment.name}{username}</h6>
-                    <p className="card-text">{comment.text}</p>
-                    {isLoggedIn && user.username === comment.name && (
-                      <button className="btn btn-danger btn-sm" onClick={() => deleteComment(comment.id)}>
-                        {t('Delete')}
-                      </button>
-                    )}
+                    <h6 className="card-title mt-1" style={{textAlign:'left'}}>{comment.name}{username}</h6>
+                    <p className="card-text mt-1" style={{textAlign:'left'}}>{comment.text}</p>
+                   
+                  </div>
+                  <div>
+                      {isLoggedIn && user.username === comment.name && (
+                          <div className="" style={{cursor: 'pointer', color: 'red'}} onClick={() => deleteComment(comment.id)}>
+                            {/* {t('Delete')} */}<MdDeleteForever size={20}/>
+                          </div>
+                        )}
                   </div>
                 </div>
               </div>
@@ -109,7 +114,7 @@ function LearnPage() {
               <div className="card-body">
                 <div className="row">
                   <div className="col-2 text-center">
-                    <span className="comment-icon" style={{ fontSize: '24px' }}>&#128100;</span>
+                    <span className="comment-icon" style={{ fontSize: '24px' }}><IoMdPerson size={25}/></span>
                   </div>
                   <div className="col-10">
                     {isLoggedIn ? (

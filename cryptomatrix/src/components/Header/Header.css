@@ -23,6 +23,7 @@
 }
 
 /* Mobile View Specific Adjustments */
+/* 
 @media (max-width: 992px) {
     .navbar-toggler {
         display: block;
@@ -30,11 +31,11 @@
         background-color: transparent;
     }
 
-    /* Correcting dropdown placement under toggle button */
+    
     .dropdown-menu {
         position: absolute;
-        top: 60px; /* Position the dropdown below the toggle button */
-        left: 0px; /* Ensure dropdown aligns properly with the toggle */
+        top: 60px; 
+        left: 0px; 
         z-index: 1000;
         display: none;
         width: 200px;
@@ -68,4 +69,4 @@
     .dropdown-menu {
         display: none;
     }
-}
+} */

@@ -82,13 +82,21 @@ function Header() {
         </div>
       </nav>
 
-      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#0073ff' }}>
-        <div className="container-fluid d-flex justify-content-between">
+      <nav className="navbar navbar-expand-md" style={{ backgroundColor: '#0073ff' }}>
+        <div className="container-fluid d-flex justify-content-between position-relative">
           <button className="navbar-toggler" type="button" onClick={toggleMenu} aria-expanded={menuOpen ? 'true' : 'false'} aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           
-         <div className="navbar-nav me-auto d-none d-lg-flex">
+        {menuOpen && <div className="navbar-nav me-auto d-md-none d-flex position-absolute card" style={{top:'3rem', left: '0.5rem', background: '#0073ff', padding: '12px'}}>
+            <Link className="nav-link text-white border-bottom border-light" to="/">{t('Home')}</Link>
+            <Link className="nav-link text-white border-bottom border-light" to="/portfolio">{t('Portfolio')}</Link>
+            <Link className="nav-link text-white border-bottom border-light" to="/learn">{t('Learn')}</Link>
+            <Link className="nav-link text-white border-bottom border-light" to="/exchange">{t('Exchange')}</Link>
+            <Link className="nav-link text-white" to="/chart">{t('Chart')}</Link>
+          </div>}
+
+          <div className="navbar-nav me-auto d-none d-md-flex flex-row" >
             <Link className="nav-link text-white" to="/">{t('Home')}</Link>
             <Link className="nav-link text-white" to="/portfolio">{t('Portfolio')}</Link>
             <Link className="nav-link text-white" to="/learn">{t('Learn')}</Link>
