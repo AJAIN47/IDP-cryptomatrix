@@ -1,24 +1,31 @@
-import React, { useEffect, useRef } from 'react';
-import { useHistory, useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ComingSoon.css';
 
-const ComingSoonPopup = ({ onClose, delay = 5000 }) => {
+const ComingSoonPopup = ({ onClose, delay = 1000 }) => {
     const popupRef = useRef(null);
-    const navigation = useNavigate();
+    const navigate = useNavigate();
+    let timer;
+
 
     // Redirect to the home page after a specified delay
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigation.push('/');
+            navigate('/');
+            console.log('Redirecting to the home page');
+            clearTimeout(timer);
+            onClose();
         }, delay);
 
         return () => clearTimeout(timer);
-    }, [delay, navigation]);
+    }, [navigate, delay]);
 
-    // Close the popup if clicked outside
+    
+
+    // Close the popup if clicked outside the popup-content class
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (popupRef.current && !popupRef.current.contains(event.target)) {
+            if (popupRef.current && !popupRef.current.contains(event.target) && event.target.className !== 'popup-content') {
                 onClose();
             }
         };
@@ -26,10 +33,13 @@ const ComingSoonPopup = ({ onClose, delay = 5000 }) => {
 
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [onClose]);
+    
+    
 
     return (
         <div className="popup-overlay">
             <div ref={popupRef} className="popup-content">
+                <button className="close-button" onClick={onClose}>X</button>
                 <h1>New feature coming soon!</h1>
                 <p className="redirect-text">redirecting to the home page</p>
                 <div className="loading-dots">

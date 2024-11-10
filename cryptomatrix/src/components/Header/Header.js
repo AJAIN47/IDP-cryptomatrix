@@ -76,8 +76,8 @@ function Header() {
             <a className="nav-link text-white" href="/">{t('Home')}</a>
             <a className="nav-link text-white" href="/portfolio">{t('Portfolio')}</a>
             <a className="nav-link text-white" href="/learn">{t('Learn')}</a>
-            <a className="nav-link text-white" href="#" onClick={openComingSoonPopup}>{t('Exchange')}</a>
-            <a className="nav-link text-white" href="#" onClick={openComingSoonPopup}>{t('Chart')}</a>
+            <a className="nav-link text-white" href="#" onClick={(e) => { e.preventDefault(); openComingSoonPopup(); }}>{t('Exchange')}</a>
+            <a className="nav-link text-white" href="#" onClick={(e) => { e.preventDefault(); openComingSoonPopup(); }}>{t('Chart')}</a>
           </div>
 
           {/* Search bar on the right (always visible) */}
@@ -107,12 +107,14 @@ function Header() {
             <a className="dropdown-item text-white" href="/">{t('Home')}</a>
             <a className="dropdown-item text-white" href="/portfolio">{t('Portfolio')}</a>
             <a className="dropdown-item text-white" href="/learn">{t('Learn')}</a>
-            <a className="dropdown-item text-white" href="#" onClick={openComingSoonPopup}>{t('Exchange')}</a>
-            <a className="dropdown-item text-white" href="#" onClick={openComingSoonPopup}>{t('Chart')}</a>
+            <a className="dropdown-item text-white" href="#" onClick={(e) => { e.preventDefault(); openComingSoonPopup(); }}>{t('Exchange')}</a>
+            <a className="dropdown-item text-white" href="#" onClick={(e) => { e.preventDefault(); openComingSoonPopup(); }}>{t('Chart')}</a>
           </div>
         </div>
       </nav>
-      <ComingSoonPopup isOpen={isComingSoonPopupOpen} onClose={closeComingSoonPopup} />
+      {isComingSoonPopupOpen && (
+        <ComingSoonPopup isOpen={isComingSoonPopupOpen} onClose={closeComingSoonPopup} />
+        )}
     </header>
   );
 }
