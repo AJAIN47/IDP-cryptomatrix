@@ -1,6 +1,10 @@
-
 .video-title {
     margin-bottom: 20px;
+}
+
+.asd {
+  margin-bottom: 10px;
+  text-align: left !important;
 }
 
 .comment-list {
@@ -30,3 +34,5 @@
   .btn-outline-secondary {
     margin-top: 5px; /* Adjusted for the reply button */
   }
+
+ 
