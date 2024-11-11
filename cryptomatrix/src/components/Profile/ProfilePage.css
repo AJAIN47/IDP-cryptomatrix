@@ -1,0 +1,66 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .user-icon {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    color: #0073ff;
+    border: 6px solid #0073ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .profile-header {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .profile-header h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .profile-header p {
+    color: #666;
+    font-size: 1.2rem;
+  }
+  
+  .payment-methods, .live-investments {
+    width: 100%;
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .payment-methods h2, .live-investments h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .payment-methods p, .live-investments div {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .payment-methods p:last-child, .live-investments div:last-child {
+    border-bottom: none;
+  }
+  
