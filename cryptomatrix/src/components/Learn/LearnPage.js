@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import Login from '../Login/Login'; // Make sure the path is correct for your Login component import
 import { useAuth } from '../../context/AuthContext'; // Import useAuth from your AuthContext
 import { IoMdPerson } from "react-icons/io";
-import { MdDeleteForever } from "react-icons/md";
+import { MdDeleteForever} from "react-icons/md";
+import blockchain from '../../assets/blockchain.jpg';
 
 function LearnPage() {
   const { t } = useTranslation();
@@ -141,6 +142,23 @@ function LearnPage() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div> 
+      <div className="container mt-5">
+            <div className="row">
+            <h5 style={{textAlign:'center'}}>{t('introductionToBlockchain')}</h5><br /><br />
+                <div className="col-md-6">
+                    <img src={blockchain} alt="Blockchain" className="img-fluid" />
+                </div>
+                <div className="col-md-6">
+                    <p style={{textAlign:'center', color: 'gray'}}>{t('blockchainDescription')}</p>
+                </div>
+                <div className="row" style={{padding: '26px'}}>
+                    <h5 style={{textAlign:'center'}}>{t('impactOfBlockchain')}</h5><br /><br />
+                    <p style={{textAlign:'center', color: 'gray'}}>{t('blockchainImpactDescription')}</p>
+                </div>
+            </div>
         </div>
       </div>
       {isPopupOpen && <Login isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />}<br />
