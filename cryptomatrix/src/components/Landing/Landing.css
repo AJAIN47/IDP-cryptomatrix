@@ -1,0 +1,60 @@
+.landing-container {
+    /* display: flex; */
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .landing-card, .crypto-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    align-content: center;
+  }
+  
+  .landing-card h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  
+  .crypto-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .landing-card p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .video-link-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Set a width for the link area */
+    height: 100px; /* Set a height for the link area */
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px auto; /* Center the link */
+  }
+  
+  .video-link {
+    position: relative;
+    z-index: 1; /* Ensure the link is above the background */
+    color: white; /* Text color */
+    font-size: 20px; /* Text size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Full height */
+    background-image: url('../../assets/bitcoin.png'); /* Use the image path directly in CSS */
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s; /* Transition effect */
+  }
+  
+  .video-link:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Darken background on hover */
+  }
+  

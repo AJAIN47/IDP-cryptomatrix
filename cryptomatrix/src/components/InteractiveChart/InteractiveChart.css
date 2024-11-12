@@ -1,0 +1,34 @@
+/* Apply white background for the entire chart container */
+.chart-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Set the chart's background to black */
+  .chartjs-render-monitor {
+    background-color: black !important;
+  }
+  
+  /* General styling for the chart, like text color */
+  canvas {
+    color: white;
+  }
+  
+  /* Ensure the labels and tooltips are also styled appropriately for a dark background */
+  .chartjs-tooltip {
+    background-color: rgba(0, 0, 0, 0.8) !important;  /* Tooltip background */
+    color: white !important;  /* Tooltip text */
+  }
+  
+  .chartjs-legend {
+    color: white;
+  }
+  
+  /* Optional: Style the title of the charts */
+  h3 {
+    color: white;
+    text-align: center;
+  }
+  

@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* This makes the content stretch to take up the available space
+.App > .App > .container {
+  flex: 1;
+} */
+
+/* Footer will be stuck at the bottom */
+footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+}

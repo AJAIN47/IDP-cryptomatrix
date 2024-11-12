@@ -1,28 +1,51 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import './Header.css';
-import Login from '../../components/logIn/login';
+import Login from '../../components/Login/Login';
+import UserPanel from '../../components/UserPanel/UserPanel';
+import { useAuth } from '../../context/AuthContext';
+import { useLocation } from 'react-router-dom'; 
 import ComingSoonPopup from '../ComingSoon/ComingSoon';
 
 function Header() {
+  const { user, isLoggedIn, setIsLoggedIn, setUsername, login, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const { t, i18n } = useTranslation(); 
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  //language change function
+  const toggleMenu = () => { setMenuOpen(!menuOpen); };
   const changeLanguage = (language) => {
-    i18n.changeLanguage(language); 
+    if (typeof language === 'string') {
+      i18n.changeLanguage(language);
+    } else {
+      console.error('Invalid type for language code:', typeof language);
+    }
   };
 
-  //popup open and close
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const openPopup = () => setIsPopupOpen(true);
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    const localUser = localStorage.getItem('username');
+    if (localUser) {
+      setIsLoggedIn(true);
+      setUsername(localUser);
+    }
+  };
 
-  const openPopup =() => setIsPopupOpen(true);
-  const closePopup =() => setIsPopupOpen(false);
+  const [isUserPanelOpen, setIsUserPanelOpen] = useState(false);
+  const toggleUserPanel = () => setIsUserPanelOpen(!isUserPanelOpen);
+
+  const getUserInitials = () => {
+    if (typeof user === 'string') {
+      return user.charAt(0).toUpperCase() + user.slice(1);
+    } else if (user && user.username) {
+      return user.username.charAt(0).toUpperCase() + user.username.slice(1);
+    }
+    return 'User';
+  };
+  const location = useLocation();
+
 
   //coming soon popup open and close
   const [isComingSoonPopupOpen, setIsComingSoonPopupOpen] = useState(false);
@@ -46,70 +69,66 @@ function Header() {
               <option value="hi">Hindi</option>
               <option value="vi">Vietnamese</option>
             </select>
-            <button 
-            className="login-button"  
-            onClick={openPopup}
-          >
-            Log In
-          </button>
-          <Login isOpen={isPopupOpen} onClose={closePopup} />          
+            {isLoggedIn ? (
+              <div className="user-menu">
+                <button onClick={toggleUserPanel} className="btn btn-primary px-4" style={{ fontSize: '1rem', borderRadius: '8px'}}>
+                  {getUserInitials()}
+                </button>
+                <UserPanel
+                    isOpen={isUserPanelOpen}
+                    onClose={() => setIsUserPanelOpen(false)}
+                    username={user ? (typeof user === 'string' ? user : user.username) : ''}
+                    setIsLoggedIn={setIsLoggedIn}
+                    logout={logout}
+                    setIsUserPanelOpen={setIsUserPanelOpen} 
+                  />
+              </div>
+            ) : (
+              <button onClick={openPopup} className="btn btn-primary px-4" style={{ fontSize: '1rem', borderRadius: '8px' }}>{t('Login')}</button>
+            )}
+
+            <Login isOpen={isPopupOpen} onClose={closePopup} login={login} />
           </div>
         </div>
       </div>
 
-      {/* Second line (Blue Ribbon) */}
-      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#0073ff' }}>
-        <div className="container-fluid d-flex justify-content-between">
-          {/* Toggle Button for mobile */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            onClick={toggleMenu}
-            aria-expanded={menuOpen ? 'true' : 'false'}
-            aria-label="Toggle navigation"
-          >
+      <nav className="navbar navbar-expand-md" style={{ backgroundColor: '#0073ff' }}>
+        <div className="container-fluid d-flex justify-content-between position-relative">
+          <button className="navbar-toggler" type="button" onClick={toggleMenu} aria-expanded={menuOpen ? 'true' : 'false'} aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
+          
+        {menuOpen && <div className="navbar-nav me-auto d-md-none d-flex position-absolute card" style={{top:'3rem', left: '0.5rem', background: '#0073ff', padding: '12px'}}>
+            <Link className="nav-link text-white border-bottom border-light" to="/">{t('Home')}</Link>
+            <Link className="nav-link text-white border-bottom border-light" to="/portfolio">{t('Portfolio')}</Link>
+            <Link className="nav-link text-white border-bottom border-light" to="/learn">{t('Learn')}</Link>
+            <Link className="nav-link text-white border-bottom border-light" to="/exchange">{t('Exchange')}</Link>
+            <Link className="nav-link text-white" to="/chart">{t('Chart')}</Link>
+          </div>}
 
-          {/* Navigation Links for full-screen */}
-          <div className="navbar-nav me-auto d-none d-lg-flex">
-            <a className="nav-link text-white" href="/">{t('Home')}</a>
-            <a className="nav-link text-white" href="/portfolio">{t('Portfolio')}</a>
-            <a className="nav-link text-white" href="/learn">{t('Learn')}</a>
-            <a className="nav-link text-white" href="#" onClick={(e) => { e.preventDefault(); openComingSoonPopup(); }}>{t('Exchange')}</a>
-            <a className="nav-link text-white" href="#" onClick={(e) => { e.preventDefault(); openComingSoonPopup(); }}>{t('Chart')}</a>
+          <div className="navbar-nav me-auto d-none d-md-flex flex-row" >
+            <Link className="nav-link text-white" to="/">{t('Home')}</Link>
+            <Link className="nav-link text-white" to="/portfolio">{t('Portfolio')}</Link>
+            <Link className="nav-link text-white" to="/learn">{t('Learn')}</Link>
+            <Link className="nav-link text-white" to="/exchange">{t('Exchange')}</Link>
+            <Link className="nav-link text-white" to="/chart">{t('Chart')}</Link>
           </div>
 
-          {/* Search bar on the right (always visible) */}
-          <div className="search-bar-container d-flex ms-auto">
-            <input
-              className="form-control rounded me-2"
-              type="search"
-              placeholder={t('SearchPlaceholder')}
-              aria-label="Search"
-            />
-            <button className="btn btn-light rounded" type="submit">
-              🔍
-            </button>
-          </div>
-
-          {/* Dropdown Menu for Mobile */}
-          <div
-            className={`dropdown-menu ${menuOpen ? 'show' : ''} d-lg-none`}
-            style={{
-              backgroundColor: '#0073ff',
-              left: '0',
-              top: '50px',
-              position: 'absolute',
-              zIndex: '999',
-            }}
-          >
-            <a className="dropdown-item text-white" href="/">{t('Home')}</a>
-            <a className="dropdown-item text-white" href="/portfolio">{t('Portfolio')}</a>
-            <a className="dropdown-item text-white" href="/learn">{t('Learn')}</a>
-            <a className="dropdown-item text-white" href="#" onClick={(e) => { e.preventDefault(); openComingSoonPopup(); }}>{t('Exchange')}</a>
-            <a className="dropdown-item text-white" href="#" onClick={(e) => { e.preventDefault(); openComingSoonPopup(); }}>{t('Chart')}</a>
-          </div>
+          <div>
+      {location.pathname === '/' && (
+        <div className="search-bar-container d-flex ms-auto">
+          <input
+            className="form-control rounded me-2"
+            type="search"
+            placeholder={t('SearchPlaceholder')}
+            aria-label="Search"
+          />
+          <button className="btn btn-light rounded" type="submit">
+            🔍
+          </button>
+        </div>
+      )}
+    </div>
         </div>
       </nav>
       {isComingSoonPopupOpen && (

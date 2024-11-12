@@ -1,0 +1,69 @@
+.carousel-container {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.horizontal-floating-tokens {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  justify-items: center;
+  margin-top: 20px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: 60vh;
+}
+
+.floating-token {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 65px;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 15px;
+  animation: floatContinuousLeftToRight 10s linear infinite; /* Continuous animation */
+}
+
+/* Continuous Left to Right Animation for Odd Rows */
+@keyframes floatContinuousLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Continuous Right to Left Animation for Even Rows */
+@keyframes floatContinuousRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Apply animations with staggered delay for zig-zag pattern */
+/* Odd rows: Move left to right without delay */
+.horizontal-floating-tokens > div:nth-child(odd) .floating-token {
+  animation-name: floatContinuousLeftToRight;
+}
+
+/* Even rows: Move right to left with a 2-second delay */
+.horizontal-floating-tokens > div:nth-child(even) .floating-token {
+  animation-name: floatContinuousRightToLeft;
+  animation-delay: 2s; /* Start 2 seconds later */
+}
