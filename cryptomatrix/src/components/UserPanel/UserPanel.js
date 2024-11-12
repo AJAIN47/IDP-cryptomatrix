@@ -29,17 +29,13 @@ const UserPanel = ({ isOpen, onClose }) => {
     let username = '';
   //if user is string
     if (typeof user === 'string') {
-        console.log('User is a string in UserPanel', user);
          username = user;
     }
     //if user is object
     else if (user && user.username) {
-        console.log('User is an object in UserPanel', user);
          username = user.username;
     }
     const initials = getInitials(username);
-
-  console.log('Current username in UserPanel', username);  // This should log what username actually contains
 
   const panelClass = isOpen ? "user-panel open" : "user-panel";
 

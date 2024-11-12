@@ -29,7 +29,6 @@ function Portfolio() {
     if (!isLoggedIn || !location.state || !location.state.newCoin || hasProcessedNewCoin) return;
 
     const { newCoin } = location.state;
-    console.log(newCoin); // This should log only once now
 
     // Check if the coin already exists in the state
     setCoins((prevCoins) => {

@@ -10,7 +10,6 @@ import { useLocation } from 'react-router-dom';
 
 function Header() {
   const { user, isLoggedIn, setIsLoggedIn, setUsername, login, logout } = useAuth();
-  console.log('Current user in header  ', user);  // This should log the current user object
   const [menuOpen, setMenuOpen] = useState(false);
   const { t, i18n } = useTranslation(); 
   const toggleMenu = () => { setMenuOpen(!menuOpen); };

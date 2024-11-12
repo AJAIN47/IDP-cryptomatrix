@@ -17,7 +17,6 @@ const Carousel = () => {
     const luminance = calculateLuminance(color);
     
     // Log to check the color and luminance
-    console.log(`Generated color: ${color}, Luminance: ${luminance}`);
   
     // Return the color with a style for text color depending on luminance
     return {
