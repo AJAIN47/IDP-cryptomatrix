@@ -12,6 +12,7 @@
     text-align: center;
     width: 40%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    align-content: center;
   }
   
   .landing-card h2 {
@@ -41,9 +42,7 @@
   
   .video-link {
     position: relative;
-    opacity: 0.7;
     z-index: 1; /* Ensure the link is above the background */
-    text-decoration: none; /* Remove underline */
     color: white; /* Text color */
     font-size: 20px; /* Text size */
     display: flex;

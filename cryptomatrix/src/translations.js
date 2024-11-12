@@ -99,6 +99,8 @@ const translations = {
       "No": "No",
       "Your purchase is confirmed": "Your purchase is confirmed",
       "Login to Purchase": "Login to Purchase",
+      "Price Changes Over Time": "Price Changes Over Time",
+      "Actual Price Over Time (USD)": "Actual Price Over Time"
     }
   },
   fr: {
@@ -200,7 +202,9 @@ const translations = {
       "Yes": "Oui",
       "No": "Non",
       "Your purchase is confirmed": "Votre achat est confirmé",
-      "Login to Purchase": "Connectez-vous pour acheter"
+      "Login to Purchase": "Connectez-vous pour acheter",
+      "Price Changes Over Time": "Changements de prix au fil du temps",
+      "Actual Price Over Time (USD)": "Prix réel au fil du temps (USD)"
     }
   },
 
@@ -303,7 +307,9 @@ const translations = {
       "Yes": "हाँ",
       "No": "नहीं",
       "Your purchase is confirmed": "आपकी खरीदारी पुष्टि की गई है",
-      "Login to Purchase": "लॉग इन करें खरीदने के लिए"
+      "Login to Purchase": "लॉग इन करें खरीदने के लिए",
+      "Price Changes Over Time": "समय के साथ मूल्य परिवर्तन",
+      "Actual Price Over Time (USD)": "वास्तविक मूल्य समय के साथ (USD)"
     }
   },
   vi: {
@@ -405,7 +411,9 @@ const translations = {
       "Yes": "Có",
       "No": "Không",
       "Your purchase is confirmed": "Giao dịch mua của bạn đã được xác nhận",
-      "Login to Purchase": "Đăng nhập để mua"
+      "Login to Purchase": "Đăng nhập để mua",
+      "Price Changes Over Time": "Thay đổi giá theo thời gian",
+      "Actual Price Over Time (USD)": "Giá thực tế theo thời gian (USD)"
     }
   },
 };

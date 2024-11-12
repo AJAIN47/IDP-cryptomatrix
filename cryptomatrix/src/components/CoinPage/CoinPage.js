@@ -186,7 +186,7 @@ const CoinPage = () => {
         style={{
           marginTop: '20px',
           padding: '10px 20px',
-          backgroundColor: (!isLoggedIn || purchaseAmount) > 0 ? '#4CAF50' : '#ccc',
+          backgroundColor: (!isLoggedIn || purchaseAmount) > 0 ? 'rgb(0, 115, 255)' : '#ccc',
           color: 'white',
           borderRadius: '4px',
           cursor: (!isLoggedIn || purchaseAmount) > 0 ? 'pointer' : 'not-allowed',

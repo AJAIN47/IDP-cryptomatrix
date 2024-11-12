@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
+import { useTranslation } from 'react-i18next';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 
 // Registering the components required for Chart.js
@@ -15,7 +16,7 @@ ChartJS.register(
 
 const InteractiveChart = ({ coinData }) => {
   const [chartData, setChartData] = useState(null);
-
+  const { t } = useTranslation();
   useEffect(() => {
     if (coinData) {
       // Simulated data for historical prices (replace with real API calls)
@@ -84,9 +85,9 @@ if (!chartData) return <p>Loading chart...</p>;
 
 return (
   <div>
-    <div className="chart-container" style={{ maxWidth: '700px', margin: '0 auto' }}>
+    <div className="chart-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
       {/* Price Changes Chart */}
-      <h3 style={{ color: 'WHITE', textDecoration: 'UNDERLINE' }}>Price Changes Over Time</h3>
+      <h3 style={{ color: 'WHITE', textDecoration: 'UNDERLINE' }}>{t('Price Changes Over Time')}</h3>
       <Line
         data={{
           labels: chartData.labels,
@@ -134,8 +135,8 @@ return (
       />
     </div>
     <div style={{ margin: '30px 0' }} />
-    <div className="chart-container" style={{ maxWidth: '700px', margin: '0 auto' }}>
-      <h3 style={{ marginTop: '30px', color: 'WHITE', textDecoration: 'UNDERLINE' }}>Actual Price Over Time (USD)</h3>
+    <div className="chart-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <h3 style={{ marginTop: '30px', color: 'WHITE', textDecoration: 'UNDERLINE' }}>{t('Actual Price Over Time (USD)')}</h3>
       <Line
         data={{
           labels: chartData.labels,

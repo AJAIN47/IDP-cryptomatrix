@@ -51,7 +51,7 @@ const ProfilePage = () => {
               <div className="col-md-6">
                   <div className="row">
                     <div className="col-auto">
-                      <div className="user-icon d-flex justify-content-center align-items-center">
+                      <div className="user-icons d-flex justify-content-center align-items-center">
                         {getInitials(username)}
                       </div>
                     </div>

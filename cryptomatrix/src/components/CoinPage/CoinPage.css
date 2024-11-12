@@ -2,7 +2,7 @@
 .coin-page {
   background-color: #ffffff; /* Set the background color to white */
   color: #333333; /* Set text color to a dark shade for readability */
-  font-family: 'Arial', sans-serif;
+  font-family: sans-serif;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -198,18 +198,13 @@
 }
 
 .purchase-section button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
+  background-color: #483d8b; /* Slightly darker green on hover */
   transform: scale(1.05); /* Slight scale up effect on hover */
 }
 
 .purchase-section button:active {
-  background-color: #388e3c; /* Even darker green on active state */
+  background-color: #483d8b; /* Even darker green on active state */
   transform: scale(1); /* Reset scale on click */
-}
-
-.purchase-section button:focus {
-  outline: none; /* Remove focus outline */
-  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.6); /* Green outline for focus */
 }
 
 .price-range-24h h4 {
