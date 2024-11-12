@@ -62,7 +62,12 @@ const translations = {
       "Employment": "Employment",
       "Community": "Community",
       "Facebook": "Facebook",
-      "Twitter": "Twitter"
+      "Twitter": "Twitter",
+      "blockchainImageAlt": "Blockchain Technology Image",
+      "introductionToBlockchain": "INTRODUCTION TO BLOCKCHAIN TECHNOLOGY",
+      "blockchainDescription": "Blockchain technology serves as the backbone for cryptocurrencies, offering a decentralized and secure digital ledger that records transactions across a network of computers. This setup ensures that no single entity controls the entire chain, enhancing the security and transparency of the system. The way blockchain works is by grouping transactions into blocks, which are then cryptographically linked to form a continuous chain. This linkage makes the recorded data nearly immutable, as altering any information would require significant computational resources.",
+      "impactOfBlockchain": "Impact of Blockchain on Cryptocurrencies",
+      "blockchainImpactDescription": "The impact of blockchain on cryptocurrencies is profound, with its primary benefit being the decentralization that allows the system to operate independently of central authorities, thus reducing fraud and increasing trust. The advanced cryptography employed in blockchain secures the data against tampering and hacking. Additionally, the immutable and transparent nature of blockchain ensures that all transactions are permanent, verifiable, and visible to all network users, which helps prevent fraud such as double-spending. Moreover, blockchain enhances accessibility to financial services, enabling people even in remote areas to engage with cryptocurrencies, fostering inclusivity in financial participation."
     }
   },
   fr: {
@@ -128,7 +133,12 @@ const translations = {
       "Employment": "Emploi",
       "Community": "Communauté",
       "Facebook": "Facebook",
-      "Twitter": "Twitter"
+      "Twitter": "Twitter",
+      "blockchainImageAlt": "Image de la technologie de la blockchain",
+      "introductionToBlockchain": "INTRODUCTION À LA TECHNOLOGIE DE LA BLOCKCHAIN",
+      "blockchainDescription": "La technologie de la blockchain sert de base aux cryptomonnaies, offrant un registre numérique décentralisé et sécurisé qui enregistre les transactions sur un réseau d'ordinateurs. Cette configuration garantit qu'aucune entité unique ne contrôle l'ensemble de la chaîne, améliorant ainsi la sécurité et la transparence du système. La blockchain fonctionne en regroupant les transactions en blocs, qui sont ensuite liés de manière cryptographique pour former une chaîne continue. Ce lien rend les données enregistrées presque immuables, car toute modification des informations nécessiterait des ressources informatiques importantes.",
+      "impactOfBlockchain": "Impact de la blockchain sur les cryptomonnaies",
+      "blockchainImpactDescription": "L'impact de la blockchain sur les cryptomonnaies est profond, avec son principal avantage étant la décentralisation qui permet au système de fonctionner indépendamment des autorités centrales, réduisant ainsi la fraude et renforçant la confiance. La cryptographie avancée utilisée dans la blockchain sécurise les données contre la manipulation et le piratage. De plus, la nature immuable et transparente de la blockchain garantit que toutes les transactions sont permanentes, vérifiables et visibles par tous les utilisateurs du réseau, ce qui aide à prévenir la fraude telle que le double dépense. De plus, la blockchain améliore l'accessibilité aux services financiers, permettant aux personnes même dans les régions éloignées de s'engager avec les cryptomonnaies, favorisant l'inclusivité dans la participation financière."
     }
   },
 
@@ -195,7 +205,12 @@ const translations = {
       "Employment": "रोजगार",
       "Community": "समुदाय",
       "Facebook": "फेसबुक",
-      "Twitter": "ट्विटर"
+      "Twitter": "ट्विटर",
+      "blockchainImageAlt": "ब्लॉकचेन प्रौद्योगिकी छवि",
+      "introductionToBlockchain": "ब्लॉकचेन प्रौद्योगिकी का परिचय",
+      "blockchainDescription": "ब्लॉकचेन प्रौद्योगिकी क्रिप्टोकरेंसियों के लिए मूलभूत रूप से काम करती है, जो एक डिजिटल लेजर प्रदान करती है जो एक कंप्यूटर नेटवर्क पर लेन-देन को दर्ज करता है। इस सेटअप से सुनिश्चित किया जाता है कि कोई एकल संस्था पूरी श्रृंखला का नियंत्रण नहीं करती, जिससे सिस्टम की सुरक्षा और पारदर्शिता में सुधार होता है। ब्लॉकचेन का काम करने का तरीका लेन-देन को ब्लॉक में समूहित करके होता है, जो फिर क्रिप्टोग्राफिकली लिंक किए जाते हैं ताकि एक निरंतर श्रृंखला बनाई जा सके। यह लिंकेज दर्ज किए गए डेटा को लगभग अपरिवर्तनीय ब बनाता है, क्योंकि किसी भी जानकारी को संशोधित करने के लिए भारी संगणनात्मक संसाधनों की आवश्यकता होगी।",
+      "impactOfBlockchain": "क्रिप्टोकरेंसियों पर ब्लॉकचेन का प्रभाव",
+      "blockchainImpactDescription": "क्रिप्टोकरेंसियों पर ब्लॉकचेन का प्रभाव गहरा है, जिसका प्रमुख लाभ वह डेसेंट्रलाइजेशन है जो सिस्टम को केंद्रीय प्राधिकरणों के बिना स्वतंत्र रूप से काम करने की अनुमति देता है, इससे धोखाधड़ी कम होती है और विश्वास बढ़ता है। ब्लॉकचेन में उपयोग की गई उन्नत गणित जानकारी डेटा को बदलने और हैकिंग से सुरक्षित रखती है। इसके अतिरिक्त, ब्लॉकचेन की अपरिवर्तनीय और पारदर्शी प्रकृति सुनिश्चित करती है कि सभी लेन-देन स्थायी, सत्यापनीय और सभी नेटवर्क उपयोगकर्ताओं को दिखाई देते हैं, जिससे धोखाधड़ी जैसी ची जैसे डबल-खर्च को रोकने में मदद मिलती है। इसके अतिरिक्त, ब्लॉकचेन वित्तीय सेवाओं की पहुंच को बढ़ाता है, जिससे लोग दूरस्थ क्षेत्रों में भी क्रिप्टोकरेंसियों के साथ जुड़ सकते हैं, वित्तीय भागीदारी में समावेश को बढ़ावा देता है।"
     }
   },
   vi: {
@@ -261,7 +276,12 @@ const translations = {
       "Employment": "Việc làm",
       "Community": "Cộng đồng",
       "Facebook": "Facebook",
-      "Twitter": "Twitter"
+      "Twitter": "Twitter",
+      "blockchainImageAlt": "Hình ảnh Công nghệ Blockchain",
+      "introductionToBlockchain": "GIỚI THIỆU VỀ CÔNG NGHỆ BLOCKCHAIN",
+      "blockchainDescription": "Công nghệ Blockchain là cột sống của tiền ảo, cung cấp một sổ cái kỹ thuật số phi tập trung và an toàn ghi lại các giao dịch trên một mạng máy tính. Thiết lập này đảm bảo rằng không có một thực thể nào kiểm soát toàn bộ chuỗi, tăng cường tính bảo mật và minh bạch của hệ thống. Cách hoạt động của blockchain là bằng cách nhóm các giao dịch thành các khối, sau đó liên kết mật mã để tạo thành một chuỗi liên tục. Liên kết này khiến dữ liệu ghi lại gần như không thể thay đổi, vì việc thay đổi thông tin nào đó sẽ đòi hỏi tài nguyên tính toán đáng kể.",
+      "impactOfBlockchain": "Tác động của Blockchain đối với Tiền ảo",
+      "blockchainImpactDescription": "Tác động của blockchain đối với tiền ảo là sâu sắc, với lợi ích chính là sự phi tập trung cho phép hệ thống hoạt động độc lập với các cơ quan trung ương, giảm gian lận và tăng cường niềm tin. Mật mã tiên tiến được sử dụng trong blockchain bảo vệ dữ liệu khỏi sự can thiệp và hack. Ngoài ra, tính không thể thay đổi và minh bạch của blockchain đảm bảo rằng tất cả các giao dịch đều là vĩnh viễn, có thể xác minh và hiển thị cho tất cả người dùng mạng, giúp ngăn chặn gian lận như chi tiêu gấp đôi. Hơn nữa, blockchain nâng cao khả năng tiếp cận dịch vụ tài chính, cho phép mọi người, ngay cả ở những khu vực xa xôi, tham gia vào tiền ảo, thúc đẩy tính bao gồm trong việc tham gia tài chính."
     }
   },
 };
