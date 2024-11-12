@@ -55,8 +55,9 @@ const Carousel = () => {
   }, []);
 
   return (
+    <div>
+      <h1 style={{padding: '32px'}}>{t('Click Your First Coin')}</h1>
     <div className="carousel-container">
-  <h2>{t('BuildYourPortfolio')}</h2>
   <div className="horizontal-floating-tokens">
     {cryptocurrencyData.map((token, index) => (
       <div
@@ -81,7 +82,7 @@ const Carousel = () => {
     ))}
   </div>
 </div>
-  
+  </div>
   );
 };
 

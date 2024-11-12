@@ -29,6 +29,7 @@ const CryptoGrid = () => {
 
   return (
     <div className="crypto-grid-container">
+        <h2>{t('Cryptocurrency Market - Grid View')}</h2>
       <div className="dropdown-container">
         <label>{t('Show')}</label>
         <select className="dropdown" onChange={(e) => setFilter(e.target.value)} value={filter}>
@@ -37,7 +38,6 @@ const CryptoGrid = () => {
           <option value="Top 20">{t('Trending Top 20')}</option>
         </select>
       </div>
-      <h2>{t('Cryptocurrency Market - Grid View')}</h2>
       <div className="crypto-grid">
         {getFilteredCryptos().map((crypto) => (
           <Link key={crypto.id} to={`/coin/${crypto.id}`} className="crypto-tile">  {/* Use Link to navigate to CoinPage */}

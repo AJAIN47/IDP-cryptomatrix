@@ -115,9 +115,9 @@ function Portfolio() {
           {coins.map((coin) => (
             <div key={coin.name} className="col-md-4 mb-3">
               <div className="card">
-                <div className="card-body" style={{backgroundColor: '#d3d3d3' }}>
+                <div className="card-body" style={{backgroundColor: 'rgb(0, 115, 255)' , color: '#fff'}}>
                   <h5 className="card-title">{coin.name}</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">{t('{{percentage}}% of your profile', { percentage: ((coin.amount / totalAmount) * 100).toFixed(2) })}</h6>
+                  <h6 className="card-subtitle mb-2">{t('{{percentage}}% of your profile', { percentage: ((coin.amount / totalAmount) * 100).toFixed(2) })}</h6>
                   <p className="card-text">(${coin.amount.toFixed(2)} in {coin.name})</p> 
                 </div>
               </div>

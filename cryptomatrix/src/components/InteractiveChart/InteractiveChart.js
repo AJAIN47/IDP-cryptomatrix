@@ -85,7 +85,7 @@ if (!chartData) return <p>Loading chart...</p>;
 
 return (
   <div>
-    <div className="chart-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <div className="chart-container" style={{ maxWidth: '1500px', margin: '0 auto' }}>
       {/* Price Changes Chart */}
       <h3 style={{ color: 'WHITE', textDecoration: 'UNDERLINE' }}>{t('Price Changes Over Time')}</h3>
       <Line
@@ -135,7 +135,7 @@ return (
       />
     </div>
     <div style={{ margin: '30px 0' }} />
-    <div className="chart-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <div className="chart-container" style={{ maxWidth: '1500px', margin: '0 auto' }}>
       <h3 style={{ marginTop: '30px', color: 'WHITE', textDecoration: 'UNDERLINE' }}>{t('Actual Price Over Time (USD)')}</h3>
       <Line
         data={{

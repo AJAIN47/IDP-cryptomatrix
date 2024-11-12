@@ -18,7 +18,7 @@ const CoinPage = () => {
   const [userBalance, setUserBalance] = useState(200000); // Mock user balance
   const [hasProcessedNewCoin, setHasProcessedNewCoin] = useState(false); 
   const [dollarInput, setDollarInput] = useState(0);
-  const [isUsdMode, setIsUsdMode] = useState(true);  // Track whether user is inputting USD or quantity
+  const [isUsdMode, setIsUsdMode] = useState(false);  // Track whether user is inputting USD or quantity
   const { isLoggedIn } = useAuth();
   const [showLogin, setShowLogin] = useState(false);
   const [highLow24h, setHighLow24h] = useState({
@@ -69,7 +69,7 @@ const CoinPage = () => {
       // Hide the snackbar after 3 seconds
       setTimeout(() => setShowSnackbar(false), 3000);
   
-      // Wait for 2 seconds before navigating
+      // Wait for 3 seconds before navigating
       setTimeout(() => {
         if (!hasProcessedNewCoin) {
           navigate('/portfolio', {
@@ -83,7 +83,7 @@ const CoinPage = () => {
           });
           setHasProcessedNewCoin(true);
         }
-      }, 2000); // Delay of 2 seconds before navigation
+      }, 3000); // Delay of 3 seconds before navigation
     } else {
       alert("Insufficient balance for this purchase.");
       setShowModal(false);
@@ -140,7 +140,7 @@ const CoinPage = () => {
       <InteractiveChart coinData={coinData.quote.USD} />
 
       <div className="purchase-section">
-        <h3>{t('Purchase')} {name}</h3>
+        <h1>{t('Purchase')} {name}</h1>
         <button className="button-class" onClick={handleToggleMode}>
           {t('Switch to')} {isUsdMode ? 'Quantity' : 'USD'} {t('Mode')}
         </button>
@@ -154,7 +154,6 @@ const CoinPage = () => {
               id="purchaseValue"
               value={dollarInput}
               onChange={handleDollarChange}
-              style={{ marginLeft: '10px', padding: '8px', width: '150px' }}
               step="any"
               className="input-class"
             />
@@ -167,7 +166,6 @@ const CoinPage = () => {
               id="purchaseAmount"
               value={purchaseAmount}
               onChange={handlePurchaseChange}
-              style={{ marginLeft: '10px', padding: '8px', width: '150px' }}
               step="any"
               className="input-class"
             />
@@ -185,15 +183,22 @@ const CoinPage = () => {
         disabled={isLoggedIn && purchaseAmount <= 0}
         style={{
           marginTop: '20px',
-          padding: '10px 20px',
+          padding: '24px 58px',
           backgroundColor: (!isLoggedIn || purchaseAmount) > 0 ? 'rgb(0, 115, 255)' : '#ccc',
           color: 'white',
-          borderRadius: '4px',
+          borderRadius: '12px',
           cursor: (!isLoggedIn || purchaseAmount) > 0 ? 'pointer' : 'not-allowed',
         }}
       >
         {isLoggedIn ? t('Purchase') : t('Login to Purchase')}
       </button>
+
+<br />
+      {showSnackbar && (
+        <div className="snackbar">
+          {t('Your purchase is confirmed')}.
+        </div>
+      )}
       
       {/* Login modal */}
       {showLogin && <Login isOpen={showLogin} onClose={toggleLogin} />}
@@ -213,11 +218,7 @@ const CoinPage = () => {
         </div>
       )}
 
-      {showSnackbar && (
-        <div className="snackbar">
-          {t('Your purchase is confirmed')}.
-        </div>
-      )}
+      
     </div>
   );
 };

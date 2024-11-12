@@ -78,7 +78,7 @@ const translations = {
       "Market Cap": "Market Cap",
       "Supply": "Supply",
       "Percentage Change": "Percentage Change",
-      "Cryptocurrency Market": "Cryptocurrency Market",
+      "Cryptocurrency Market": "Cryptocurrency Market - List View",
       "Cryptocurrency Market - Grid View": "Cryptocurrency Market - Grid View",
       "Price:": "Price:",
       "Total Supply": "Total Supply",
@@ -91,16 +91,17 @@ const translations = {
       "Purchase": "Purchase",
       "Switch to": "Switch to",
       "Mode": "Mode",
-      "Amount in USD": "Amount in USD: ",
-      "Amount to Buy (in coins)": "Amount to Buy (in coins): ",
-      "Total USD Value": "Total USD Value: ",
+      "Amount in USD": "Amount in USD",
+      "Amount to Buy (in coins)": "Coins to Buy",
+      "Total USD Value": "Total USD Value",
       "Are you sure you want to buy": "Are you sure you want to buy",
       "Yes": "Yes",
       "No": "No",
       "Your purchase is confirmed": "Your purchase is confirmed",
       "Login to Purchase": "Login to Purchase",
       "Price Changes Over Time": "Price Changes Over Time",
-      "Actual Price Over Time (USD)": "Actual Price Over Time"
+      "Actual Price Over Time (USD)": "Actual Price Over Time",
+      "Click Your First Coin": "Click your first Coin and kickstart your Portfolio!"
     }
   },
   fr: {
@@ -182,7 +183,7 @@ const translations = {
       "Market Cap": "Capitalisation boursière",
       "Supply": "Offre",
       "Percentage Change": "Changement de pourcentage",
-      "Cryptocurrency Market": "Marché des cryptomonnaies",
+      "Cryptocurrency Market": "Marché des cryptomonnaies - Vue en liste",
       "Cryptocurrency Market - Grid View": "Marché des cryptomonnaies - Vue en grille",
       "Price:": "Prix:",
       "Total Supply": "Offre totale",
@@ -195,16 +196,17 @@ const translations = {
       "Purchase": "Acheter",
       "Switch to": "Passer à",
       "Mode": "Mode",
-      "Amount in USD": "Montant en USD: ",
-      "Amount to Buy (in coins)": "Montant à acheter (en pièces): ",
-      "Total USD Value": "Valeur totale en USD: ",
+      "Amount in USD": "Montant en USD",
+      "Amount to Buy (in coins)": "Quantité à acheter",
+      "Total USD Value": "Valeur totale en USD",
       "Are you sure you want to buy": "Êtes-vous sûr de vouloir acheter",
       "Yes": "Oui",
       "No": "Non",
       "Your purchase is confirmed": "Votre achat est confirmé",
       "Login to Purchase": "Connectez-vous pour acheter",
       "Price Changes Over Time": "Changements de prix au fil du temps",
-      "Actual Price Over Time (USD)": "Prix réel au fil du temps (USD)"
+      "Actual Price Over Time (USD)": "Prix réel au fil du temps (USD)",
+      "Click Your First Coin": "Cliquez sur votre première pièce et lancez votre portefeuille !"
     }
   },
 
@@ -287,7 +289,7 @@ const translations = {
       "Market Cap": "मार्केट कैप",
       "Supply": "आपूर्ति",
       "Percentage Change": "प्रतिशत परिवर्तन",
-      "Cryptocurrency Market": "क्रिप्टोकरेंसी बाजार",
+      "Cryptocurrency Market": "क्रिप्टोकरेंसी बाजार - सूची दृश्य",
       "Cryptocurrency Market - Grid View": "क्रिप्टोकरेंसी बाजार - ग्रिड दृश्य",
       "Price:": "मूल्य:",
       "Total Supply": "कुल आपूर्ति",
@@ -300,8 +302,8 @@ const translations = {
       "Purchase": "खरीदें",
       "Switch to": "स्विच करें",
       "Mode": "मोड",
-      "Amount in USD": "USD में राशि: ",
-      "Amount to Buy (in coins)": "खरीदने के लिए राशि (सिक्कों में): ",
+      "Amount in USD": "USD में राशि",
+      "Amount to Buy (in coins)": "खरीदने के लिए सिक्के",
       "Total USD Value": "कुल USD मूल्य: ",
       "Are you sure you want to buy": "क्या आप खरीदना चाहते हैं",
       "Yes": "हाँ",
@@ -309,7 +311,8 @@ const translations = {
       "Your purchase is confirmed": "आपकी खरीदारी पुष्टि की गई है",
       "Login to Purchase": "लॉग इन करें खरीदने के लिए",
       "Price Changes Over Time": "समय के साथ मूल्य परिवर्तन",
-      "Actual Price Over Time (USD)": "वास्तविक मूल्य समय के साथ (USD)"
+      "Actual Price Over Time (USD)": "वास्तविक मूल्य समय के साथ (USD)",
+      "Click Your First Coin": "अपनी पहली कॉइन पर क्लिक करें और अपना पोर्टफोलियो शुरू करें!"
     }
   },
   vi: {
@@ -391,7 +394,7 @@ const translations = {
       "Market Cap": "Vốn hóa thị trường",
       "Supply": "Cung cấp",
       "Percentage Change": "Thay đổi phần trăm",
-      "Cryptocurrency Market": "Thị trường tiền điện tử",
+      "Cryptocurrency Market": "Thị trường tiền điện tử - Xem danh sách",
       "Cryptocurrency Market - Grid View": "Thị trường tiền điện tử - Xem lưới",
       "Price:": "Giá:",
       "Total Supply": "Tổng cung",
@@ -404,8 +407,8 @@ const translations = {
       "Purchase": "Mua",
       "Switch to": "Chuyển sang",
       "Mode": "Chế độ",
-      "Amount in USD": "Số tiền trong USD: ",
-      "Amount to Buy (in coins)": "Số tiền để mua (trong đồng): ",
+      "Amount in USD": "Số tiền trong USD",
+      "Amount to Buy (in coins)": "Số lượng cần mua",
       "Total USD Value": "Tổng giá trị USD: ",
       "Are you sure you want to buy": "Bạn có chắc chắn muốn mua",
       "Yes": "Có",
@@ -413,7 +416,8 @@ const translations = {
       "Your purchase is confirmed": "Giao dịch mua của bạn đã được xác nhận",
       "Login to Purchase": "Đăng nhập để mua",
       "Price Changes Over Time": "Thay đổi giá theo thời gian",
-      "Actual Price Over Time (USD)": "Giá thực tế theo thời gian (USD)"
+      "Actual Price Over Time (USD)": "Giá thực tế theo thời gian (USD)",
+      "Click Your First Coin": "Nhấp vào Đồng tiền đầu tiên của bạn và bắt đầu Bảng điều khiển của bạn!"
     }
   },
 };

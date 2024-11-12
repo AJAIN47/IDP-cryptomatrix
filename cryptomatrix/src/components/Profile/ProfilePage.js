@@ -10,10 +10,11 @@ const ProfilePage = () => {
   // Load investments from localStorage or default to empty array
   const loadInvestmentsFromStorage = () => {
     const savedCoins = localStorage.getItem('coins');
-    if (savedCoins) {
-      return JSON.parse(savedCoins);  // Parse the saved coins if available
-    }
-    return [];  // Return empty array if no saved coins
+    return savedCoins ? JSON.parse(savedCoins) : [
+      { name: 'Bitcoin', amount: 3000 },
+      { name: 'Ethereum', amount: 1250 },
+      { name: 'Dogecoin', amount: 750 }
+    ];
   };
 
   const [investments, setInvestments] = useState(loadInvestmentsFromStorage());
@@ -66,7 +67,7 @@ const ProfilePage = () => {
               {/* Payment Methods */}
               <div className="col-md-6">
                 <div className="payment-methods">
-                  <h2>{t('Payment Methods')}</h2>
+                  <h2 style={{fontSize: '28px'}}>{t('Payment Methods')}</h2>
                   <p>{username}'s {t('userCredit', { cardNumber: '**** **** **** 1234' })}</p>
                   <p>{username}'s {t('userPaypal', { email: '********@mail.com' })}</p>
                 </div>
@@ -77,13 +78,14 @@ const ProfilePage = () => {
           <div className="row">
             <div className="col-12">
               <div className="live-investments">
-              <h2>{t('Amount')}: ${totalAmount.toFixed(2)}</h2>
-                <h2>{t('Live Investments')}</h2>
+              <h2 style={{fontSize: '28px'}}>{t('Amount')}: ${totalAmount.toFixed(2)}</h2>
+                <h2 style={{fontSize: '28px'}}>{t('Live Investments')}</h2>
                 {/* Display investments from localStorage */}
                 {investments.length > 0 ? (
                   investments.map(({ name, amount }) => (
                     <div key={name}>
-                      {name}: ${amount.toFixed(2)}
+                    {name}:
+                      <br/>${amount.toFixed(2)}
                     </div>
                   ))
                 ) : (

@@ -15,35 +15,39 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Carousel from './components/Carousel/Carousel';
 import CryptoViewToggle from './components/CryptoViewToggle/CryptoViewToggle';
 import CoinPage from './components/CoinPage/CoinPage'; // Import CoinPage
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import ComingSoonPopup from './components/ComingSoon/ComingSoon';
 
 function App() {
   return (
     <Router>
-     <AuthProvider> 
+      <AuthProvider>
         <div className="App">
           <Header />
           <Routes>
-          <Route 
-          path="/" 
-          element={
-            <>
-              <Landing />
-              <Carousel />
-              <CryptoViewToggle />
-            </>
-          } 
-        />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Landing />
+                  <Carousel />
+                  <CryptoViewToggle />
+                </>
+              }
+            />
 
-        {/* Route for CoinPage - displays only when URL is /coin/:id */}
-        <Route path="/coin/:id" element={<CoinPage />} />
+            {/* Route for CoinPage - displays only when URL is /coin/:id */}
+            <Route path="/coin/:id" element={<CoinPage />} />
             <Route path="/learn" element={<LearnPage />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/profile" element={<ProfilePage />} />
-            {/* Add more Route elements here for other paths */}
+            <Route path="/exchange" element={<ComingSoonPopup />} />
+            <Route path="/chart" element={<ComingSoonPopup />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
         </div>
-        </AuthProvider>
+      </AuthProvider>
     </Router>
   );
 }

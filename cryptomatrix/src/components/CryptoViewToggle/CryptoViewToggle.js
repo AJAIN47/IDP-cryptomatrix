@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import { GridView, List } from '@mui/icons-material';  // Import Material Icons for Grid and List views
 import CryptoGrid from '../CryptoGrid/CryptoGrid';
 import CryptoTable from '../CryptoTable/CryptoTable';
+import { useTranslation } from 'react-i18next';
 
 const CryptoViewToggle = () => {
-  const [isGridView, setIsGridView] = useState(false); // State to toggle view
+  const [isGridView, setIsGridView] = useState(true); // State to toggle view
 
   const toggleView = () => {
     setIsGridView(!isGridView); // Toggle view when icon is clicked
   };
+  const { t } = useTranslation();
 
   return (
     <div>
       {/* Toggle button container to show both icons */}
+      <h1 style={{padding: '32px'}}>{t('Uncover')}</h1>
       <div style={styles.iconContainer}>
         <button 
           onClick={toggleView} 
@@ -40,10 +43,9 @@ const styles = {
   iconContainer: {
     display: 'flex',
     justifyContent: 'flex-end',
-    marginBottom: '20px',  // Space between icons and content
   },
   icon: {
-    backgroundColor: 'transparent',
+    backgroundColor: 'lightgray',  // Light gray background for inactive icon
     border: 'none',
     cursor: 'pointer',
     padding: '10px',
