@@ -14,7 +14,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Carousel from './components/Carousel/Carousel';
 import CryptoViewToggle from './components/CryptoViewToggle/CryptoViewToggle';
-import { BrowserRouter as Router, Routes, Route, useRoutes } from 'react-router-dom'; // Import useRoutes
 import CoinPage from './components/CoinPage/CoinPage'; // Import CoinPage
 
 function App() {

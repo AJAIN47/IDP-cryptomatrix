@@ -26,7 +26,6 @@ html, body {
     padding: 10px 0;
     border-top: 1px solid #ddd;
     width: 100%;
-    margin-top: 0; /* Pushes footer to the bottom */
 }
 
 .footer-container {

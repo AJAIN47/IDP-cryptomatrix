@@ -32,6 +32,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem('username');
+    localStorage.removeItem('coins');
     setUser(null);
     setIsLoggedIn(false);
   };
