@@ -6,6 +6,7 @@ import './Header.css';
 import Login from '../../components/Login/Login';
 import UserPanel from '../../components/UserPanel/UserPanel';
 import { useAuth } from '../../context/AuthContext';
+import { useLocation } from 'react-router-dom'; 
 
 function Header() {
   const { user, isLoggedIn, setIsLoggedIn, setUsername, login, logout } = useAuth();
@@ -43,7 +44,7 @@ function Header() {
     }
     return 'User';
   };
-
+  const location = useLocation();
   return (
     <header>
       <nav className="navbar navbar-light bg-white shadow-sm">
@@ -104,10 +105,21 @@ function Header() {
             <Link className="nav-link text-white" to="/chart">{t('Chart')}</Link>
           </div>
 
-          <div className="search-bar-container d-flex ms-auto">
-            <input className="form-control rounded me-2" type="search" placeholder={t('SearchPlaceholder')} aria-label="Search" />
-            <button className="btn btn-light rounded" type="submit">🔍</button>
-          </div>
+          <div>
+      {location.pathname === '/' && (
+        <div className="search-bar-container d-flex ms-auto">
+          <input
+            className="form-control rounded me-2"
+            type="search"
+            placeholder={t('SearchPlaceholder')}
+            aria-label="Search"
+          />
+          <button className="btn btn-light rounded" type="submit">
+            🔍
+          </button>
+        </div>
+      )}
+    </div>
         </div>
       </nav>
     </header>

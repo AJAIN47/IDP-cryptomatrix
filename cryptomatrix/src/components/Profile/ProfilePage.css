@@ -1,66 +1,142 @@
+/* Profile container */
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+  background: linear-gradient(135deg, #f1f1f1, #f8f8f8); /* Light gradient background */
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.p-container {
+  background-color: #d3d3d3;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2f4f4f; /* Dark Teal */
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #3b9c9c; /* Muted Teal */
+  margin-bottom: 10px;
+}
+
+/* User icon with gradient */
+.user-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradient pink to orange */
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border: 4px solid #ffffff;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1)
+}
+
+.username-section h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2e3a3a; /* Darker shade for the username */
+}
+
+.username-section p {
+  font-size: 1.1rem;
+  color: #6c757d; /* Light grayish color */
+}
+
+/* Payment Methods section with colorful background */
+.payment-methods {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  border-left: 4px solid #ff7e5f; /* Accent color */
+}
+
+.payment-methods p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Investments section with colorful gradient border */
+.live-investments {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  border-left: 4px solid #feb47b;
+}
+
+.live-investments div {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 10px;
+  background-color: rgb(0, 115, 255);
+  padding: 20px;
+  display: inline-grid;
+  margin: 20px;
+  width: 200px;
+  height: 100px;
+  justify-items: center;
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+.live-investments p {
+  color: #777;
+  font-size: 1rem;
+}
+
+/* Button style for interaction (e.g., edit profile, add investment) */
+button {
+  background-color: #ff7e5f; /* Accent color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #feb47b; /* Hover effect to change the background color */
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 30px 15px;
   }
-  
-  .user-icon {
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    color: #0073ff;
-    border: 6px solid #0073ff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .profile-header {
-    text-align: center;
-    width: 100%;
-  }
-  
-  .profile-header h1 {
+
+  h1 {
     font-size: 2rem;
-    color: #333;
-    margin: 10px 0;
   }
-  
-  .profile-header p {
-    color: #666;
-    font-size: 1.2rem;
+
+  .user-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
   }
-  
-  .payment-methods, .live-investments {
-    width: 100%;
-    background: white;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .payment-methods h2, .live-investments h2 {
+
+  .username-section h1 {
     font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
   }
-  
-  .payment-methods p, .live-investments div {
-    font-size: 1.2rem;
-    color: #555;
-    padding: 5px 0;
-    border-bottom: 1px solid #ddd;
+
+  .payment-methods,
+  .live-investments {
+    margin-top: 15px;
   }
-  
-  .payment-methods p:last-child, .live-investments div:last-child {
-    border-bottom: none;
-  }
-  
+}

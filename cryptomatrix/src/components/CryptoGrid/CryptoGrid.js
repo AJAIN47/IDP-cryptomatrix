@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Import Link
 import './CryptoGrid.css';
+import { useTranslation } from 'react-i18next';
 
 const CryptoGrid = () => {
   const [cryptos, setCryptos] = useState([]);
   const [filter, setFilter] = useState("All");
-
+  const { t } = useTranslation(); 
   useEffect(() => {
     const fetchCryptoData = async () => {
       try {
@@ -29,14 +30,14 @@ const CryptoGrid = () => {
   return (
     <div className="crypto-grid-container">
       <div className="dropdown-container">
-        <label>Show:</label>
+        <label>{t('Show')}</label>
         <select className="dropdown" onChange={(e) => setFilter(e.target.value)} value={filter}>
-          <option value="All">All</option>
-          <option value="Top 10">Trending Top 10</option>
-          <option value="Top 20">Trending Top 20</option>
+          <option value="All">{t('All')}</option>
+          <option value="Top 10">{t('Trending Top 10')}</option>
+          <option value="Top 20">{t('Trending Top 20')}</option>
         </select>
       </div>
-      <h2>Cryptocurrency Market - Grid View</h2>
+      <h2>{t('Cryptocurrency Market - Grid View')}</h2>
       <div className="crypto-grid">
         {getFilteredCryptos().map((crypto) => (
           <Link key={crypto.id} to={`/coin/${crypto.id}`} className="crypto-tile">  {/* Use Link to navigate to CoinPage */}

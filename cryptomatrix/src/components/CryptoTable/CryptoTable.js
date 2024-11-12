@@ -3,14 +3,15 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
 import './CryptoTable.css';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 // Register the necessary components
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend);
 
 const CryptoTable = () => {
   const [cryptos, setCryptos] = useState([]);
   const [filter, setFilter] = useState("All"); // State to manage dropdown filter
-
-
+  const { t } = useTranslation(); 
   useEffect(() => {
     const fetchCryptoData = async () => {
       try {
@@ -25,17 +26,9 @@ const CryptoTable = () => {
     fetchCryptoData();
   }, []);
 
-  // Function to generate zig-zag pattern from the data
+  // Function to return the data without altering it
   const generateZigZagData = (data) => {
-    let zigzagData = [];
-    let direction = 1;  // 1 for increasing, -1 for decreasing
-
-    // Generate zig-zag pattern by alternating the direction
-    for (let i = 0; i < data.length; i++) {
-      zigzagData.push(data[i] * direction);
-      direction *= -1;  // Flip the direction after each step
-    }
-    return zigzagData;
+    return data; // Simply return the data as is
   };
 
   // Define custom column widths for specific columns
@@ -66,90 +59,96 @@ const CryptoTable = () => {
     },
   };
 
-
- // Apply filter to display only the required number of items
- const filteredCryptos = filter === "All" ? cryptos 
- : filter === "Top 10" ? cryptos.slice(0, 10) 
- : cryptos.slice(0, 20);
+  // Apply filter to display only the required number of items
+  const filteredCryptos = filter === "All" ? cryptos 
+    : filter === "Top 10" ? cryptos.slice(0, 10) 
+    : cryptos.slice(0, 20);
 
   return (
     <div className="crypto-table-container">
-      <h2>Cryptocurrency Market</h2>
+      <h2>{t('Cryptocurrency Market')}</h2>
 
       <div className="dropdown-container">
-  <label>Show: </label>
-  <select className="dropdown" onChange={(e) => setFilter(e.target.value)} value={filter}>
-    <option value="All">All</option>
-    <option value="Top 10">Trending Top 10</option>
-    <option value="Top 20">Trending Top 20</option>
-  </select>
-</div>
+        <label>{t('Show')}</label>
+        <select className="dropdown" onChange={(e) => setFilter(e.target.value)} value={filter}>
+          <option value="All">{t('All')}</option>
+          <option value="Top 10">{t('Trending Top 10')}</option>
+          <option value="Top 20">{t('Trending Top 20')}</option>
+        </select>
+      </div>
 
       <table className="crypto-table" style={{ width: '100%', tableLayout: 'fixed' }}>
         <thead>
           <tr>
-            <th style={columnStyles.symbol}>Symbol</th>
-            <th style={columnStyles.name}>Name</th>
-            <th style={columnStyles.price}>Price</th>
-            <th style={columnStyles.market}>Market Cap</th>
-            <th style={columnStyles.supply}>Supply</th>
-            <th style={columnStyles.trend}>Trend</th>
+            <th style={columnStyles.symbol}>{t('Symbol')}</th>
+            <th style={columnStyles.name}>{t('Name')}</th>
+            <th style={columnStyles.price}>{t('Price')}</th>
+            <th style={columnStyles.market}>{t('Market Cap')}</th>
+            <th style={columnStyles.supply}>{t('Supply')}</th>
+            <th style={columnStyles.trend}>{t('Percentage Change')}</th>
           </tr>
         </thead>
         <tbody>
-  {filteredCryptos.map((crypto) => (
-    <tr key={crypto.id}>
-      <td style={columnStyles.symbol}>
-        <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${crypto.id}.png`} alt={crypto.name} style={{ width: '30px', height: '30px' }} />
-      </td>
-      <td style={columnStyles.name}>
-        <Link to={`/coin/${crypto.id}`} style={{ color: '#00d1b2', textDecoration: 'none' }}>
-          {crypto.name}
-        </Link>
-      </td>
-      <td style={columnStyles.price}>${crypto.quote.USD.price.toFixed(2).toLocaleString()}</td>
-      <td style={columnStyles.market}>${crypto.quote.USD.market_cap.toLocaleString()}</td>
-      <td style={columnStyles.supply}>{crypto.circulating_supply.toLocaleString()}</td>
-      <td style={columnStyles.trend}>
-        <Line
-          data={{
-            labels: ["1h", "24h", "7d", "30d", "60d", "90d"], // Define time periods as labels
-            datasets: [{
-              label: 'Price Trend',
-              data: generateZigZagData([
-                crypto.quote.USD.percent_change_1h,
-                crypto.quote.USD.percent_change_24h,
-                crypto.quote.USD.percent_change_7d,
-                crypto.quote.USD.percent_change_30d,
-                crypto.quote.USD.percent_change_60d,
-                crypto.quote.USD.percent_change_90d,
-              ]), // Use the generated zig-zag data
-              borderColor: "rgba(255, 99, 132, 1)", // Color for the zig-zag line
-              backgroundColor: "rgba(255, 99, 132, 0.2)",
-              fill: true,  // Fill the area under the line
-              borderWidth: 2,
-              pointRadius: 3,
-            }],
-          }}
-          options={{
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              x: { display: true },
-              y: { display: true },
-            },
-            plugins: {
-              legend: { display: false }
-            }
-          }}
-          height={90}
-          width={100}
-        />
-      </td>
-    </tr>
-  ))}
-</tbody>
+          {filteredCryptos.map((crypto) => (
+            <tr key={crypto.id}>
+              <td style={columnStyles.symbol}>
+                <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${crypto.id}.png`} alt={crypto.name} style={{ width: '30px', height: '30px' }} />
+              </td>
+              <td style={columnStyles.name}>
+                <Link to={`/coin/${crypto.id}`} style={{ color: '#00d1b2', textDecoration: 'none' }}>
+                  {crypto.name}
+                </Link>
+              </td>
+              <td style={columnStyles.price}>${crypto.quote.USD.price.toFixed(2).toLocaleString()}</td>
+              <td style={columnStyles.market}>${crypto.quote.USD.market_cap.toLocaleString()}</td>
+              <td style={columnStyles.supply}>{crypto.circulating_supply.toLocaleString()}</td>
+              <td style={columnStyles.trend}>
+              <Line
+  data={{
+    labels: ["1h", "24h", "7d", "30d", "60d", "90d"], // Time periods
+    datasets: [
+      {
+        label: 'Price Trend', // Label for the dataset
+        data: [
+          crypto.quote.USD.price, // Price at 1 hour
+          crypto.quote.USD.price * (1 + crypto.quote.USD.percent_change_24h / 100), // Price at 24 hours
+          crypto.quote.USD.price * (1 + crypto.quote.USD.percent_change_7d / 100), // Price at 7 days
+          crypto.quote.USD.price * (1 + crypto.quote.USD.percent_change_30d / 100), // Price at 30 days
+          crypto.quote.USD.price * (1 + crypto.quote.USD.percent_change_60d / 100), // Price at 60 days
+          crypto.quote.USD.price * (1 + crypto.quote.USD.percent_change_90d / 100), // Price at 90 days
+        ],
+        borderColor: "rgba(54, 162, 235, 1)", // Line color
+        backgroundColor: "rgba(54, 162, 235, 0.2)", // Background color of the area under the line
+        fill: true, // Fill the area under the line
+        borderWidth: 2, // Line thickness
+        pointRadius: 3, // Point size
+      },
+    ],
+  }}
+  options={{
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: { display: true }, // Display x-axis
+      y: { // y-axis for price
+        type: 'linear',
+        position: 'left',
+      },
+    },
+    plugins: {
+      legend: { display: true }, // Display legend
+    },
+  }}
+  height={90}
+  width={100}
+/>
 
+
+
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
