@@ -1,0 +1,81 @@
+.crypto-table th,
+.crypto-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.crypto-table th:nth-child(1),
+.crypto-table td:nth-child(1) {
+    width: 60px;
+}
+
+.crypto-table th:nth-child(2),
+.crypto-table td:nth-child(2) {
+    width: 200px;
+    text-align: left;
+}
+
+.crypto-table th:nth-child(3),
+.crypto-table td:nth-child(3) {
+    width: 120px;
+    text-align: right;
+}
+
+.crypto-table th:nth-child(4),
+.crypto-table td:nth-child(4),
+.crypto-table th:nth-child(5),
+.crypto-table td:nth-child(5) {
+    width: 150px;
+    text-align: right;
+}
+
+.crypto-table th:nth-child(6),
+.crypto-table td:nth-child(6) {
+    width: 100px;
+}
+
+.crypto-table-container {
+    position: relative;
+    padding: 20px;
+    background-color: #f9fafc; /* Light background color for the table container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around the table container */
+  }
+  
+  .dropdown-container {
+    display: flex;
+    justify-content: flex-end; /* Align dropdown to the right */
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .dropdown-container label {
+    margin-right: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  .dropdown {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #007bff; /* Primary color for dropdown */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px; /* Rounded corners for the dropdown */
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3); /* Shadow for dropdown */
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .dropdown:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+  
+  .dropdown:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Custom focus outline */
+  }
+  

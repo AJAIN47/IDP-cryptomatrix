@@ -1,0 +1,43 @@
+.portfolio {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .portfolio h1 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .amount {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .investments div {
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .deposit {
+    background-color: #007bff;
+  }
+  
+  .withdraw {
+    background-color: #dc3545;
+  }
+  .title {
+    font-size: 1.5rem;
+    color: gray;
+
+  }
+  

@@ -16,6 +16,7 @@
 .search-bar-container .form-control {
     max-width: 250px;
     height: 40px;
+    min-width: 250px;
 }
 
 .search-bar-container .btn {
@@ -23,6 +24,7 @@
 }
 
 /* Mobile View Specific Adjustments */
+/* 
 @media (max-width: 992px) {
     .navbar-toggler {
         display: block;
@@ -30,11 +32,11 @@
         background-color: transparent;
     }
 
-    /* Correcting dropdown placement under toggle button */
+    
     .dropdown-menu {
         position: absolute;
-        top: 60px; /* Position the dropdown below the toggle button */
-        left: 0px; /* Ensure dropdown aligns properly with the toggle */
+        top: 60px; 
+        left: 0px; 
         z-index: 1000;
         display: none;
         width: 200px;
@@ -68,4 +70,37 @@
     .dropdown-menu {
         display: none;
     }
-}
+} */
+
+.autocomplete-list {
+    position: absolute;
+    margin-top: 50px;
+    left: 75%;
+    right: 14px;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #0073ff;
+  }
+  
+  .autocomplete-item {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .autocomplete-item:hover {
+    background-color: #f0f0f0;
+  }
+
+  .coin-name {
+    color: blue; /* Change to whatever color you like */
+  }
+  
+  .coin-price {
+    color: green; /* Change to whatever color you like */
+  }

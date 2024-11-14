@@ -1,0 +1,230 @@
+/* General styling for the CoinPage */
+.coin-page {
+  background-color: #ffffff; /* Set the background color to white */
+  color: #333333; /* Set text color to a dark shade for readability */
+  font-family: sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.coin-page .interactive-chart {
+  width: 100%;
+  height: 400px; /* Adjust height as necessary */
+  background-color: #000000; /* Set chart wrapper background to black */
+}
+
+/* Header Styling */
+.coin-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.coin-page .price {
+  font-size: 1.5em;
+  color: #1e88e5;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Background Card Styling */
+.background-card {
+  background-color: #f9f9f9; /* Light gray background for the card */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.background-card .metric {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.background-card .rank {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2e7d32; /* Green color for rank */
+}
+
+/* Tag List Styling */
+.tags-title {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.coin-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.coin-page ul li {
+  background-color: #f1f1f1;
+  padding: 8px 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  color: #555;
+  font-size: 1.1em;
+}
+
+/* Purchase Section Styling */
+.purchase-section {
+  background: #d3d3d373;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.purchase-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.label-class {
+  font-size: 2.8em;
+  color: #333;
+}
+
+.input-class {
+  margin: 20px;
+  padding: 10px;
+  width: 400px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 2.1em;
+  margin-left: 10px;
+}
+
+.purchase-section .divclass {
+  font-size: 2.3em;
+  margin-top: 15px;
+}
+
+.purchase-section span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* For the chart container */
+.coin-page .chart-container {
+  margin: 40px 0;
+  text-align: center;
+  background-color: #000000; /* Set the background of the chart to black */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 40px;
+}
+
+/* Styling for loading/error messages */
+.coin-page p {
+  font-size: 1.2em;
+  color: #888;
+  margin: 20px 0;
+}
+
+.coin-page li {
+  color: #fff; /* Ensure text is white for readability */
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Snackbar Styling */
+.snackbar {
+  /* position: fixed; */
+  /* bottom: 40px; */
+  /* left: 50%;
+  transform: translateX(-50%); */
+  background-color: green;
+  color: white;
+  padding: 12px 50px;
+  border-radius: 4px;
+  font-size: 22px;
+  transition: opacity 0.5s ease;
+}
+
+.close-icon {
+  background-color: darkgray;
+    position: absolute;
+    top: 6px;
+    right: 9px;
+    font-size: 23px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 0px 10px;
+}
+
+.button-class {
+  padding: 12px 24px; /* Larger padding for better user experience */
+  background-color: black; /* Green color */
+  color: white; /* White text */
+  font-size: 20px; /* Slightly larger font size */
+  font-weight: bold; /* Bold text */
+  border-radius: 6px; /* Rounded corners */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover and active state */
+  margin: 20px; /* Space above the button */
+}
+
+.purchase-section button:disabled {
+  background-color: #ccc; /* Gray color for disabled state */
+  cursor: not-allowed; /* Change cursor to not-allowed for disabled state */
+}
+
+.purchase-section button:hover {
+  background-color: #483d8b; /* Slightly darker green on hover */
+  transform: scale(1.05); /* Slight scale up effect on hover */
+}
+
+.purchase-section button:active {
+  background-color: #483d8b; /* Even darker green on active state */
+  transform: scale(1); /* Reset scale on click */
+}
+
+.price-range-24h h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.price-range-24h p {
+  display: inline-block;
+  padding: 8px 12px;
+  color: #fff;
+  background-color: rgb(0, 115, 255); /* Green background */
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 24px;
+}
+
+.price-range-24h p span {
+  color: #fff;
+  font-weight: normal;
+  font-size: 0.9em;
+}
