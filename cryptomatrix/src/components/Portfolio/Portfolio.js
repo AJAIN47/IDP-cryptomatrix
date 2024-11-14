@@ -78,7 +78,7 @@ function Portfolio() {
   if (!isLoggedIn) {
     return (
       <div className="container my-5 text-center">
-        <h4 className="title card-title" style={{ color: 'gray' }}>{t('Log In or Sign Up to Start Building Your Portfolio Today!')}</h4><br />
+        <h4 className="title card-title" style={{ color: 'black' }}>{t('Log In or Sign Up to Start Building Your Portfolio Today!')}</h4><br />
         <button className="btn btn-primary" onClick={toggleLogin}>{t('Log In / SignUp')}</button>
         {showLogin && <Login isOpen={showLogin} onClose={toggleLogin} />}
       </div>
@@ -94,7 +94,7 @@ function Portfolio() {
 
   return (
     <div className="container my-5">
-      <h4 className="title card-title" style={{ color: 'gray' }}>{`${username}'s `}{t('PORTFOLIO')}</h4><br />
+      <h4 className="title card-title" style={{ color: 'black' }}>{`${username}'S `}{t('PORTFOLIO')}</h4><br />
       <div className="card shadow">
         <div className="card-body d-flex align-items-center justify-content-between" style={{ padding: '20px 80px', backgroundColor: '#d3d3d3' }}>
           <div> 
@@ -109,7 +109,7 @@ function Portfolio() {
         {message && <div className="alert alert-success" role="alert">{message}</div>}
       </div>
       <br />
-      <h4 className="card-title title" style={{ color: 'gray' }}>{t('YOUR INVESTMENTS')}</h4><br />
+      <h4 className="card-title title" style={{ color: 'black' }}>{t('YOUR INVESTMENTS')}</h4><br />
       <div className="container">
         <div className="row">
           {coins.map((coin) => (

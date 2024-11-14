@@ -45,7 +45,7 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-container">
-      <h1 style={{ color: 'gray' }}>{t('Profile')}</h1> 
+      <h1 style={{ color: 'black' }}>{t('Profile')}</h1> 
       <div className="p-container">
           {/* User Profile Row */}
           <div className="row align-items-center col-12">
@@ -57,7 +57,7 @@ const ProfilePage = () => {
                       </div>
                     </div>
                     <div className="col" style={{ textAlign: 'left', margin: 'auto'}}>
-                      <div style={{ textAlign: 'left', color: 'gray'}}>
+                      <div style={{ textAlign: 'left', color: 'black'}}>
                         <h1>{username}</h1>
                         <p>{t('Member since 2024')}</p>
                       </div>

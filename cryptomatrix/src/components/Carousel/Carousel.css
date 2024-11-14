@@ -4,35 +4,26 @@
   padding: 0 20px;
 }
 
-h2 {
-  font-size: 20px;
-  margin: 10px 0;
-  color: #333;
-  font-weight: bold;
-}
-
 .horizontal-floating-tokens {
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  gap: 10px;
-  justify-items: center;
-  margin-top: 20px;
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  height: 60vh;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 35px;
+    justify-items: center;
+    margin-top: 20px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
 .floating-token {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 130px;
+  width: 150px;
   height: 65px;
-  font-weight: bold;
   font-size: 12px;
-  border-radius: 15px;
+  border-radius: 25px;
   animation: floatContinuousLeftToRight 10s linear infinite; /* Continuous animation */
 }
 

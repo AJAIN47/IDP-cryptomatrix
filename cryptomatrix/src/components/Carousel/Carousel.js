@@ -72,10 +72,14 @@ const Carousel = () => {
           style={{
             textDecoration: 'none',  // Remove underline
             fontFamily: 'sans-serif',
-            fontWeight: '600',
             color: 'inherit'  // Inherit color from parent
           }}
         >
+          <img
+              src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${token.id}.png`}
+              alt={token.name}
+              style={{ width: '20px', height: '20px', marginRight: '5px' }}
+            />
           {token.name} {token.symbol ? `(${token.symbol})` : "No symbol available"}
         </Link>
       </div>

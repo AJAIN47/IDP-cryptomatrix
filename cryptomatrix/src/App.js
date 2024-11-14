@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './i18n';
 import './App.css';
 import { AuthProvider } from './context/AuthContext';
+import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
 import Portfolio from './components/Portfolio/Portfolio';
@@ -19,11 +20,26 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import ComingSoonPopup from './components/ComingSoon/ComingSoon';
 
 function App() {
+  const [cryptocurrencyData, setCryptocurrencyData] = useState([]);
+
+  useEffect(() => {
+    const fetchCryptocurrencyData = async () => {
+      try {
+        const response = await fetch('http://localhost:5004/api/cryptocurrency');
+        const data = await response.json();
+        setCryptocurrencyData(data.data); // Adjust based on your API response
+      } catch (error) {
+        console.error('Error fetching cryptocurrency data:', error);
+      }
+    };
+
+    fetchCryptocurrencyData();
+  }, []);
   return (
     <Router>
       <AuthProvider>
         <div className="App">
-          <Header />
+          <Header cryptocurrencies={cryptocurrencyData}/>
           <Routes>
             <Route
               path="/"

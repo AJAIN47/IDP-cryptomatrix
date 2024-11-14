@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Login from '../Login/Login'; // Make sure the path is correct for your Login component import
 import { useAuth } from '../../context/AuthContext'; // Import useAuth from your AuthContext
 import { IoMdPerson } from "react-icons/io";
-import { MdDeleteForever} from "react-icons/md";
+import { MdDeleteForever } from "react-icons/md";
 import blockchain from '../../assets/blockchain.jpg';
 
 function LearnPage() {
@@ -53,11 +53,11 @@ function LearnPage() {
   let username = '';
   //if user is string
   if (typeof user === 'string') {
-        username = user;
+    username = user;
   }
   //if user is object
   else if (user && user.username) {
-        username = user.username;
+    username = user.username;
   }
 
   return (
@@ -81,28 +81,28 @@ function LearnPage() {
           <div className="comment-list" style={{ maxHeight: '300px', overflowY: 'auto' }}>
             <div className="card mb-2">
               <div className="card-body d-flex">
-                <div className="comment-icon col-1 text-center"><IoMdPerson size={25}/></div>
+                <div className="comment-icon col-1 text-center"><IoMdPerson size={25} /></div>
                 <div className="col-10">
-                  <h6 className="card-title" style={{textAlign:'left'}}>{elonMuskComment.name}</h6>
-                  <p className="card-text" style={{textAlign:'left'}}>{elonMuskComment.text}</p>
+                  <h6 className="card-title" style={{ textAlign: 'left' }}>{elonMuskComment.name}</h6>
+                  <p className="card-text" style={{ textAlign: 'left' }}>{elonMuskComment.text}</p>
                 </div>
               </div>
             </div>
             {comments.map(comment => (
               <div key={comment.id} className="card mb-2">
                 <div className="card-body d-flex">
-                  <div className="comment-icon col-1 text-center"><IoMdPerson size={25}/></div>
+                  <div className="comment-icon col-1 text-center"><IoMdPerson size={25} /></div>
                   <div className="col-10">
-                    <h6 className="card-title mt-1" style={{textAlign:'left'}}>{comment.name}{username}</h6>
-                    <p className="card-text mt-1" style={{textAlign:'left'}}>{comment.text}</p>
-                   
+                    <h6 className="card-title mt-1" style={{ textAlign: 'left' }}>{comment.name}{username}</h6>
+                    <p className="card-text mt-1" style={{ textAlign: 'left' }}>{comment.text}</p>
+
                   </div>
                   <div>
-                      {isLoggedIn && user.username === comment.name && (
-                          <div className="" style={{cursor: 'pointer', color: 'red'}} onClick={() => deleteComment(comment.id)}>
-                            {/* {t('Delete')} */}<MdDeleteForever size={20}/>
-                          </div>
-                        )}
+                    {isLoggedIn && user.username === comment.name && (
+                      <div className="" style={{ cursor: 'pointer', color: 'red' }} onClick={() => deleteComment(comment.id)}>
+                        {/* {t('Delete')} */}<MdDeleteForever size={20} />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ function LearnPage() {
               <div className="card-body">
                 <div className="row">
                   <div className="col-2 text-center">
-                    <span className="comment-icon" style={{ fontSize: '24px' }}><IoMdPerson size={25}/></span>
+                    <span className="comment-icon" style={{ fontSize: '24px' }}><IoMdPerson size={25} /></span>
                   </div>
                   <div className="col-10">
                     {isLoggedIn ? (
@@ -142,21 +142,29 @@ function LearnPage() {
           </div>
         </div>
       </div>
-      <div> 
-      <div className="container mt-5">
-            <div className="row">
-            <h5 style={{textAlign:'center'}}>{t('introductionToBlockchain')}</h5><br /><br />
-                <div className="col-md-6">
-                    <img src={blockchain} alt="Blockchain" className="img-fluid" />
-                </div>
-                <div className="col-md-6">
-                    <p style={{textAlign:'center', color: 'gray'}}>{t('blockchainDescription')}</p>
-                </div>
-                <div className="row" style={{padding: '26px'}}>
-                    <h5 style={{textAlign:'center'}}>{t('impactOfBlockchain')}</h5><br /><br />
-                    <p style={{textAlign:'center', color: 'gray'}}>{t('blockchainImpactDescription')}</p>
-                </div>
+      <div>
+        <div className="container mt-5">
+          <div className="row">
+            <h5 style={{ textAlign: 'center' }}>{t('introductionToBlockchain')}</h5><br /><br />
+            <div className="col-md-6">
+              <img src={blockchain} alt="Blockchain" className="img-fluid" />
             </div>
+            <div className="col-md-6 d-flex">
+              <p style={{
+                textAlign: 'center', color: 'black',
+                display: 'flex',
+                alignItems: 'center'
+              }}>{t('blockchainDescription')}</p>
+            </div>
+            <div className="row" style={{ padding: '26px 0px 26px 26px' }}>
+              <h5 style={{ textAlign: 'center' }}>{t('impactOfBlockchain')}</h5><br /><br />
+              <p style={{
+                textAlign: 'center', color: 'black',
+                display: 'flex',
+                alignItems: 'center'
+              }}>{t('blockchainImpactDescription')}</p>
+            </div>
+          </div>
         </div>
       </div>
       {isPopupOpen && <Login isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />}<br />
